@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+.text-white {
+  color: white;
+}
+
+.text-orange {
+  color: rgb(222, 178, 47);
+}
+
+

@@ -1,0 +1,18 @@
+.question {
+  display: block;
+  padding: 10px;
+  margin: 30px 0 12px 0;
+  padding-top: 0;
+  border-radius: 15%;
+  border: 5px solid white;
+  background-color: rgba(40, 70, 151, 0.8);
+  line-height: 50px;
+  height: 60px;
+  font-weight: bold;
+  float: left;
+  width: 100%;
+}
+
+.question p {
+  margin-bottom: 0;
+}

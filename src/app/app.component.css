@@ -1,0 +1,56 @@
+.container {
+  width: 80%;
+  height: 100%;
+  text-align: center;
+  background-image: url(/assets/pics/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-window {
+  width: 80%;
+  display: block;
+}
+
+.main_w {
+  display: block;
+  padding: 10px;
+  width: 100%;
+}
+
+.main {
+  height: 500px;
+  display: flex;
+  padding: 10px;
+}
+
+.main-window-content {
+  display: flex;
+}
+
+.presenter {
+  margin-left: 7%;
+  margin-bottom: -100px;
+  margin-top: -10px;
+}
+
+.answ-quest {
+  display: block;
+  width: 100%;
+  font-size: 17px;
+}
+
+.disabled {
+  background-color: rgba(164, 160, 155, 0.8);
+}
+
+.footer {
+  height: 40px;
+  width: 80%;
+  background-color: #000000;
+  opacity: 0.8;
+  text-align: left;
+  line-height: 40px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

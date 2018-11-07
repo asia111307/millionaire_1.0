@@ -1,0 +1,66 @@
+.helpers {
+  width: 80%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  margin-top: 10px;
+}
+
+.people_2 button:focus, .phone_2 button:focus, .half_2 button:focus {
+  outline: 0;
+}
+
+.people, .phone, .half {
+  display: block;
+  text-align: center;
+  width: 75px;
+  height: 75px;
+  margin: 0 auto;
+}
+.phone {
+  margin: 0 15px;
+}
+
+.people_2, .phone_2, .half_2 {
+  background-color: rgba(40, 70, 151, 0.8);
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  padding: 10px;
+}
+
+.phone img, .people img, .user img, .half img {
+  width: 55px;
+  height: 55px;
+  padding: 10px;
+}
+
+.people-icon, .phone-icon, .user-icon, .half-icon {
+  border-radius: 50%;
+  background-color: white;
+  padding: 0;
+}
+
+.disabled {
+  background-color: rgba(164, 160, 155, 0.8);
+}
+
+.helper-hover-people, .helper-disabled-people, .helper-hover-phone, .helper-disabled-phone, .helper-hover-half, .helper-disabled-half {
+  display: none;
+}
+
+.helpers .people:hover .helper-hover-people, .helpers .phone:hover .helper-hover-phone, .helpers .half:hover .helper-hover-half {
+  display: block;
+  background-color: rgba(40, 70, 151, 0.8);
+  border-radius: 25px;
+  color: white;
+  height: 50px;
+  width: 200px;
+  line-height: 50px;
+  margin-top: 10px;
+  margin-left: -55px;
+}
+
+.helpers .people:hover .people_2, .helpers .phone:hover .phone_2, .helpers .half:hover .half_2, .answer-a:hover, .answer-b:hover, .answer-c:hover, .answer-d:hover {
+  background-color: rgba(159, 179, 222, 0.8)
+}
