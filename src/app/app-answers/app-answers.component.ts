@@ -13,9 +13,17 @@ export class AppAnswersComponent implements OnInit {
 
   ngOnInit() {}
 
-  checkAnswer(answer_value) {
-    if (answer_value === this.correct) {
+  checkAnswer(answer) {
+    const  answ = document.getElementById(answer);
+    answ.classList.add('selected-answer');
+    if (answer === this.correct) {
+      setTimeout(function() {
+        answ.classList.add('correct-answer');}, 3000);
       this.isCorrect = true;
+    } else {
+      const corr = document.getElementById(this.correct);
+      setTimeout(function() {
+        corr.classList.add('correct-answer');}, 3000;
     }
   }
 }

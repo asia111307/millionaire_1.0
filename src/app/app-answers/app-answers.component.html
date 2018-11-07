@@ -1,18 +1,18 @@
 <div class="answers">
   <div class="answers-a-b">
-    <div class="answer-a selected-answer" (click)="checkAnswer(answer_a.value())">
-      <p class="text-white" #answer_a ><span class="text-orange">A:</span> {{ answers[0] }}</p>
+    <div id="answer_a" class="answer-a" (click)="checkAnswer('answer_a')">
+      <p class="text-white"><span class="text-orange">A:</span> {{ answers[0] }}</p>
     </div>
-    <div class="answer-b" (click)="checkAnswer(answer_b.value())">
-      <p class="text-white" #answer_b ><span class="text-orange">B:</span> {{ answers[1] }}</p>
+    <div id="answer_b" class="answer-b" (click)="checkAnswer('answer_b')">
+      <p class="text-white" ><span class="text-orange">B:</span> {{ answers[1] }}</p>
     </div>
   </div>
   <div class="answers-c-d">
-    <div class="answer-c" ((click)="checkAnswer(answer_c.value())">
-      <p class="text-white" #answer_c ><span class="text-orange">C:</span> {{ answers[2] }}</p>
+    <div id="answer_c" class="answer-c" (click)="checkAnswer('answer_c')">
+      <p class="text-white"><span class="text-orange">C:</span> {{ answers[2] }}</p>
     </div>
-    <div class="answer-d correct-answer" (click)="checkAnswer(answer_d.value())">
-      <p class="text-white" #answer_d ><span class="text-orange">D:</span> {{ answers[3] }}</p>
+    <div id="answer_d" class="answer-d" (click)="checkAnswer('answer_d')">
+      <p class="text-white"><span class="text-orange">D:</span> {{ answers[3] }}</p>
     </div>
   </div>
 </div>

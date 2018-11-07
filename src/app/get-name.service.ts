@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GetNameService {
-  getName() {
+  static getName() {
     return document.getElementsByClassName('username_input')[0].innerHTML;
   }
 }

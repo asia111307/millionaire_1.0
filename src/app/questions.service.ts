@@ -21,23 +21,30 @@ export class QuestionsService {
     const used_questions = [];
     const quest_box = quest_pack[Math.floor(Math.random() * quest_pack.length)];
     if (used_questions.includes(quest_box)) {
-      console.log(quest_box);
     } else {
       used_questions.push(quest_box);
       return quest_box;
     }
   }
   static set_question(quest_box) {
-    console.log(quest_box[0]);
     return quest_box[0];
   }
   static set_answers(quest_box) {
-    console.log(quest_box[1]);
     return quest_box[1];
   }
   static set_correct(quest_box) {
-    console.log(quest_box[2]);
-    return quest_box[2];
+    if (quest_box[2] === 'a') {
+      return 'answer_a';
+    }
+    if (quest_box[2] === 'b') {
+      return 'answer_b';
+    }
+    if (quest_box[2] === 'c') {
+      return 'answer_c';
+    }
+    if (quest_box[2] === 'd') {
+      return 'answer_d';
+    }
   }
   choose_pack() {
     const question_pack = QuestionsService.open_quest_pack();

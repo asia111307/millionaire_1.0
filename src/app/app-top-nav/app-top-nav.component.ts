@@ -7,6 +7,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AppTopNavComponent implements OnInit {
   @Input() user_name: string;
+  @Input() answers: string[];
+  @Input() correct: string;
   constructor() {}
 
   ngOnInit() {}

@@ -7,11 +7,20 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'Milionerzy dla kognitywistów';
-  @Input() username: string;
+  @Input() username: string = '';
+  @Input() answers: string[] = [];
+  @Input() correct: string = '';
+  constructor() {}
+  ngOnInit() {}
+
   handleName(name) {
     this.username = name;
   }
-  constructor() {}
-  ngOnInit() {}
+  handleCorrect(corr) {
+    this.correct = corr;
+  }
+  handleAnswers(answ) {
+    this.answers = answ;
+  }
 }
 
