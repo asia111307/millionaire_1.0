@@ -13,6 +13,7 @@ import { AppStartMenuComponent } from './app-start-menu/app-start-menu.component
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { QuestionsService } from './questions.service';
 import { AppAnswQuestComponent } from './app-answ-quest/app-answ-quest.component';
+import { CapitalizePipe } from './capitalize.pipe';
 
 
 const components = [
@@ -30,7 +31,7 @@ const components = [
 ];
 
 @NgModule({
-  declarations: components,
+  declarations: [components, CapitalizePipe],
   imports: [
     BrowserModule,
     CommonModule

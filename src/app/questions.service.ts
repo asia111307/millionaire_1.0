@@ -1,10 +1,10 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable} from '@angular/core';
 import {QUESTIONS} from './questions';
 
 @Injectable({
   providedIn: 'root'
 })
-export class QuestionsService implements OnInit {
+export class QuestionsService {
   constructor() { }
 
   static open_quest_pack() {
