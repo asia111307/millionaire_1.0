@@ -43,6 +43,7 @@
 
 .disabled {
   background-color: rgba(164, 160, 155, 0.8);
+  cursor: default;
 }
 
 .helper-hover-people, .helper-disabled-people, .helper-hover-phone, .helper-disabled-phone, .helper-hover-half, .helper-disabled-half {

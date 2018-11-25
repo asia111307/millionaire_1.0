@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {STRINGS} from '../strings';
 
 @Component({
@@ -8,9 +8,9 @@ import {STRINGS} from '../strings';
 })
 export class AppTextboxComponent implements OnInit {
   strings =  STRINGS;
+  @Input() current_message: string;
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Router} from '@angular/router';
+import {IsAnswerCorrectService} from '../is-answer-correct.service';
 
 @Component({
   selector: 'app-answers',
@@ -9,7 +11,7 @@ export class AppAnswersComponent implements OnInit {
   @Input() answers: any;
   @Input() correct: string;
   isCorrect: boolean;
-  constructor() { }
+  constructor(private router: Router, private isCorrectAnswerService: IsAnswerCorrectService) { }
 
   ngOnInit() {}
 
@@ -17,13 +19,20 @@ export class AppAnswersComponent implements OnInit {
     const  answ = document.getElementById(answer);
     answ.classList.add('selected-answer');
     if (answer === this.correct) {
-      setTimeout(function() {
-        answ.classList.add('correct-answer');}, 3000);
-      this.isCorrect = true;
+      setTimeout(() => {
+        answ.classList.add('correct-answer');
+        this.isCorrect = true;
+        this.isCorrectAnswerService.saveValue(this.isCorrect);
+        this.router.navigate(['decision']);
+        }, 3000);
     } else {
       const corr = document.getElementById(this.correct);
-      setTimeout(function() {
-        corr.classList.add('correct-answer');}, 3000;
+      setTimeout(() => {
+        corr.classList.add('correct-answer');
+        this.isCorrect = false;
+        this.isCorrectAnswerService.saveValue(this.isCorrect);
+        this.router.navigate(['decision']);
+        }, 3000);
     }
   }
 }

@@ -1,8 +1,7 @@
 .question {
   display: block;
-  padding: 10px;
+  padding: 10px 5px 0 5px;
   margin: 15px 0 12px 0;
-  padding-top: 10px;
   border-radius: 15%;
   border: 5px solid white;
   background-color: rgba(40, 70, 151, 0.8);

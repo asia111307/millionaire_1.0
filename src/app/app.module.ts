@@ -14,6 +14,12 @@ import { AppFooterComponent } from './app-footer/app-footer.component';
 import { QuestionsService } from './questions.service';
 import { AppAnswQuestComponent } from './app-answ-quest/app-answ-quest.component';
 import { CapitalizePipe } from './capitalize.pipe';
+import { AppPeopleComponent } from './app-people/app-people.component';
+import { AppPhoneComponent } from './app-phone/app-phone.component';
+import { AppMainWindowComponent } from './app-main-window/app-main-window.component';
+import { AppRoutingModule} from './app-routing/app-routing.module';
+import { AppDecisionComponent } from './app-decision/app-decision.component';
+import { CorrectValueDeliverService } from './correct-value-deliver.service';
 
 
 const components = [
@@ -27,16 +33,21 @@ const components = [
   AppTextboxComponent,
   AppStartMenuComponent,
   AppFooterComponent,
-  AppAnswQuestComponent
+  AppAnswQuestComponent,
+  AppPeopleComponent,
+  AppPhoneComponent,
+  AppMainWindowComponent,
+  AppDecisionComponent
 ];
 
 @NgModule({
   declarations: [components, CapitalizePipe],
   imports: [
     BrowserModule,
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
-  providers: [QuestionsService],
+  providers: [QuestionsService, CorrectValueDeliverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

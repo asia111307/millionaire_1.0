@@ -5,9 +5,10 @@ import {QUESTIONS} from './questions';
   providedIn: 'root'
 })
 export class QuestionsService {
+  used_questions = [];
   constructor() { }
 
-  static open_quest_pack() {
+  open_quest_pack() {
     try {
       const quest_pack = QUESTIONS;
       return quest_pack;
@@ -17,22 +18,21 @@ export class QuestionsService {
     }
   }
 
-  static choose_question_box(quest_pack) {
-    const used_questions = [];
+  choose_question_box(quest_pack) {
     const quest_box = quest_pack[Math.floor(Math.random() * quest_pack.length)];
-    if (used_questions.includes(quest_box)) {
+    if (this.used_questions.includes(quest_box)) {
     } else {
-      used_questions.push(quest_box);
+      this.used_questions.push(quest_box);
       return quest_box;
     }
   }
-  static set_question(quest_box) {
+  set_question(quest_box) {
     return quest_box[0];
   }
-  static set_answers(quest_box) {
+  set_answers(quest_box) {
     return quest_box[1];
   }
-  static set_correct(quest_box) {
+  set_correct(quest_box) {
     if (quest_box[2] === 'a') {
       return 'answer_a';
     }
@@ -47,11 +47,11 @@ export class QuestionsService {
     }
   }
   choose_pack() {
-    const question_pack = QuestionsService.open_quest_pack();
-    const quest_box = QuestionsService.choose_question_box(question_pack);
-    const question = QuestionsService.set_question(quest_box);
-    const answers = QuestionsService.set_answers(quest_box);
-    const correct = QuestionsService.set_correct(quest_box);
+    const question_pack = this.open_quest_pack();
+    const quest_box = this.choose_question_box(question_pack);
+    const question = this.set_question(quest_box);
+    const answers = this.set_answers(quest_box);
+    const correct = this.set_correct(quest_box);
     return [question, answers, correct];
   }
 }

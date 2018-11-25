@@ -6,7 +6,7 @@ import {Component, OnInit, Input, Output, EventEmitter, OnDestroy} from '@angula
   styleUrls: ['./app-userpanel.component.css']
 })
 export class AppUserpanelComponent implements OnInit {
-  @Input() name;
+  @Input() name = '';
 
   constructor() {}
 

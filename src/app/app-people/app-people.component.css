@@ -1,0 +1,55 @@
+.helper-people {
+  border-radius: 10%;
+  border: 10px solid rgba(40, 70, 151, 0.8);
+  margin: 35px 0 0 100px;
+  width: 280px;
+}
+.label {
+  height: 20px;
+  color: rgb(40, 70, 151);
+  font-size: 14px;
+  margin: 0;
+}
+.a-label, .b-label, .c-label, .d-label {
+  margin-bottom: 0;
+}
+.outcome_a, .outcome_b, .outcome-c, .outcome_d {
+  width: 12%;
+  display: inline-block;
+  margin: 0 10px;
+}
+.people-background {
+  background-color: white;
+  height: 100%;
+  border-radius: 7%;
+}
+.A, .B, .C, .D {
+  height: 20px;
+  padding: 3px 5px 10px 5px;
+  margin-bottom: 10px;
+  color: rgb(40, 70, 151);
+  font-size: 15px;
+}
+.bar {
+  border: none;
+  background-color: rgb(40, 70, 151);
+  border-radius: 5%;
+  height: 130px;
+}
+.white-bar_a, .white-bar_b, .white-bar_c, .white-bar_d {
+  background-color: white;
+  vertical-align: bottom;
+}
+.white-bar_a {
+  height: 99%;
+}
+.white-bar_b {
+  height: 99%;
+}
+.white-bar_c {
+  height: 99%;
+}
+.white-bar_d {
+  height: 99%;
+}
+

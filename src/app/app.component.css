@@ -40,10 +40,6 @@
   font-size: 17px;
 }
 
-.disabled {
-  background-color: rgba(164, 160, 155, 0.8);
-}
-
 .footer {
   height: 40px;
   width: 80%;

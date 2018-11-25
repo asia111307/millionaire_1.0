@@ -1,0 +1,22 @@
+<app-textbox [current_message]="current_text"></app-textbox>
+<div class="decision">
+  <div class="decision-background">
+    <div *ngIf="isCorrect" class="decision-box">
+      <div class="box">
+        <p class="quest">Super! <br>Jaki jest Twój następny krok?</p>
+      </div>
+      <div class="buttons">
+        <button type="submit" (click)="nextQuestion()"><p class="text-white"> Gram dalej!</p></button>
+        <button type="submit"><p class="text-white"> Kończę grę</p></button>
+      </div>
+    </div>
+    <div *ngIf="!isCorrect" class="decision-box">
+      <div class="box">
+        <p class="quest">Niestety, to nie jest dobra odpowiedź.</p>
+      </div>
+      <div class="buttons">
+        <button type="submit"><p class="text-white"> Zakończ grę</p></button>
+      </div>
+    </div>
+  </div>
+</div>

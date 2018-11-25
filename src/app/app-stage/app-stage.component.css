@@ -25,10 +25,6 @@
   font-weight: bold;
 }
 
-.current-stage {
-  border: 5px solid rgb(222, 178, 47);
-}
-
 .stage-1 {
   width: 150px;
 }

@@ -6,6 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./app-question.component.css']
 })
 export class AppQuestionComponent {
-  @Input() question: string;
+  @Input() question = '';
   constructor() {}
 }

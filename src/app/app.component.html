@@ -4,8 +4,7 @@
       <app-top-nav [user_name]="username" [correct]="correct" [answers]="answers"></app-top-nav>
       <div class="main-window-content">
         <div>
-          <app-textbox></app-textbox>
-          <app-start-menu (user_name)="handleName($event)"></app-start-menu>
+          <app-app-main-window [correct]="correct"></app-app-main-window>
         </div>
         <div class="presenter">
           <img src="../assets/pics/presenter.png">

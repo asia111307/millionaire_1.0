@@ -6,4 +6,7 @@
   color: rgb(222, 178, 47);
 }
 
+.current-stage {
+  border: 5px solid rgb(222, 178, 47);
+}
 
