@@ -10,6 +10,7 @@ import {AppAnswQuestComponent} from '../app-answ-quest/app-answ-quest.component'
 })
 export class AppDecisionComponent implements OnInit {
   isCorrect: boolean;
+  current_text: string;
   constructor(private isAnswerCorrectService: IsAnswerCorrectService,  private answQuestCoponent: AppAnswQuestComponent) { }
 
   ngOnInit() {
