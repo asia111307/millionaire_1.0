@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {STRINGS} from '../strings';
-import {CorrectValueDeliverService} from '../correct-value-deliver.service';
+import {QuestionsService} from '../questions.service';
 
 @Component({
   selector: 'app-app-people',
@@ -9,45 +9,24 @@ import {CorrectValueDeliverService} from '../correct-value-deliver.service';
 })
 export class AppPeopleComponent implements OnInit {
   isPeopleUsed = false;
-  @Input() correct: string;
+  correct: string;
   strings = STRINGS;
-  current_text: string;
   a: number;
   b: number;
   c: number;
   d: number;
-
-  constructor(private ValueService: CorrectValueDeliverService) {}
-
-  ngOnInit() {
-    const people_hover = document.getElementById('people');
-    people_hover.style.pointerEvents = 'none';
-    const people = document.getElementById('people_2');
-    people.classList.add('disabled');
-    this.correct = this.ValueService.readValue();
-    console.log(this.correct);
-    if (this.correct === 'answer_a') {
-      this.correct = 'A';
-    }
-    if (this.correct === 'answer_b') {
-      this.correct = 'B';
-    }
-    if (this.correct === 'answer_c') {
-      this.correct = 'C';
-    }
-    if (this.correct === 'answer_d') {
-      this.correct = 'D';
-    }
-    setTimeout(() => {this.handlePeople();}, 2200);
+  constructor(
+    private questionsService: QuestionsService
+  ) {
+    this.questionsService.correct$.subscribe((correct: string) => { this.correct = correct; } );
   }
-
   handlePeople() {
     if (this.isPeopleUsed) {
       return this.strings[1];
     } else {
       this.isPeopleUsed = true;
     }
-    //this.current_text = this.strings[17];
+    // this.current_text = this.strings[17];
     const KNOWS = ['know', 'not_know', 'know', 'know'];
     const know = KNOWS[Math.floor(Math.random() * KNOWS.length)];
     console.log(know);
@@ -68,7 +47,7 @@ export class AppPeopleComponent implements OnInit {
           possibles.splice(possibles.indexOf(random_answr_perc), 1);
         }
       }
-      console.log(corr_percent,b, c, d);
+      console.log(corr_percent, b, c, d);
     } else {
       const a: number = Math.floor(Math.random() * 51);
       const b: number = Math.floor(Math.random() * (100 - a));
@@ -90,5 +69,24 @@ export class AppPeopleComponent implements OnInit {
     this.d = OUTCOME['D'];
     document.getElementById('white-bar_d').style.height = `${100 - this.d}%`;
   }
-
+  ngOnInit() {
+    const people_hover = document.getElementById('people');
+    people_hover.style.pointerEvents = 'none';
+    const people = document.getElementById('people_2');
+    people.classList.add('disabled');
+    console.log(this.correct);
+    if (this.correct === 'answer_a') {
+      this.correct = 'A';
+    }
+    if (this.correct === 'answer_b') {
+      this.correct = 'B';
+    }
+    if (this.correct === 'answer_c') {
+      this.correct = 'C';
+    }
+    if (this.correct === 'answer_d') {
+      this.correct = 'D';
+    }
+    setTimeout(() => {this.handlePeople(); }, 2200);
+  }
 }

@@ -1,32 +1,33 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component} from '@angular/core';
 import {STRINGS} from '../strings';
-import {CorrectValueDeliverService} from '../correct-value-deliver.service';
 import {PresenterTextService} from '../presenter-text.service';
+import {QuestionsService} from '../questions.service';
 
 @Component({
   selector: 'app-helpers',
   templateUrl: './app-helpers.component.html',
   styleUrls: ['./app-helpers.component.css']
 })
-export class AppHelpersComponent implements OnInit {
+export class AppHelpersComponent {
   isHalfUsed = false;
-  @Input() correct = '';
-  @Input() answers = [];
+  correct: string;
+  answers: any;
   strings = STRINGS;
-  current_text: string;
-
-  constructor(private correctValueDeliverService: CorrectValueDeliverService, private presenterTextService: PresenterTextService) { }
-
-  ngOnInit() {}
-
+  constructor(
+    private questionsService: QuestionsService,
+    private presenterTextService: PresenterTextService
+  ) {
+    this.questionsService.answers$.subscribe((answers: any) => { this.answers = answers; } );
+    this.questionsService.correct$.subscribe((correct: string) => { this.correct = correct; } );
+  }
   handleHalf() {
     if (this.isHalfUsed) {
       return this.strings[1];
     } else {
       this.isHalfUsed = true;
     }
-    //this.current_text = this.strings[2];
-    //this.presenterTextService.saveValue(this.current_text);
+    // this.current_text = this.strings[2];
+    // this.presenterTextService.saveValue(this.current_text);
     const half_hover = document.getElementById('half');
     half_hover.style.pointerEvents = 'none';
     const half = document.getElementById('half_2');
@@ -38,9 +39,9 @@ export class AppHelpersComponent implements OnInit {
       if (this.answers.indexOf(second_answ) !== answs.indexOf(this.correct)) {
         for (let i = 0; i < 4; i++) {
           if (i !== answs.indexOf(this.correct) && i !== this.answers.indexOf(second_answ)) {
-            const element = document.getElementById(answs[i]);
-            element.innerHTML = '';
-            element.style.pointerEvents = 'none';
+            const element = document.getElementsByClassName(answs[i] + '_p')[0];
+            (<HTMLElement>element).style.display = 'none';
+            (<HTMLElement>element).parentElement.style.pointerEvents = 'none';
           }
         }
       }

@@ -1,10 +1,10 @@
 <div class="container">
   <div class="main_w">
     <div class="main-window">
-      <app-top-nav [user_name]="username" [correct]="correct" [answers]="answers"></app-top-nav>
+      <app-top-nav></app-top-nav>
       <div class="main-window-content">
         <div>
-          <app-app-main-window [correct]="correct"></app-app-main-window>
+          <app-app-main-window></app-app-main-window>
         </div>
         <div class="presenter">
           <img src="../assets/pics/presenter.png">
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="answ-quest">
-      <app-answ-quest (answers2)="handleAnswers($event)" (corr)="handleCorrect($event)"></app-answ-quest>
+      <app-answ-quest></app-answ-quest>
     </div>
   </div>
   <app-footer></app-footer>

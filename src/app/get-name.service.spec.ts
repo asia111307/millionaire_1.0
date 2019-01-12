@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { GetNameService } from './get-name.service';
+import {GetNameService} from './get-name.service';
 
 describe('GetNameService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

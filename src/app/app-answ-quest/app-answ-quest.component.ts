@@ -1,40 +1,43 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, OnChanges} from '@angular/core';
 import {QuestionsService} from '../questions.service';
-import {CorrectValueDeliverService} from '../correct-value-deliver.service';
-import {Router} from '@angular/router';
-
+import {CurrentValuesService} from '../current-values.service';
 
 @Component({
   selector: 'app-answ-quest',
   templateUrl: './app-answ-quest.component.html',
-  styleUrls: ['./app-answ-quest.component.css'],
+  styleUrls: ['./app-answ-quest.component.css']
 })
-export class AppAnswQuestComponent implements OnInit {
-  question = '';
-  answers = [];
-  @Output() answers2 = new EventEmitter();
-  correct = '';
-  @Output() corr = new EventEmitter();
-  question_box: any;
-  constructor(private questionsService: QuestionsService, private correctValueService: CorrectValueDeliverService,) { }
-
+export class AppAnswQuestComponent implements OnInit, OnChanges {
+  prev_stage: any;
+  constructor(private questionsService: QuestionsService, private currentValuesService: CurrentValuesService) {
+    this.currentValuesService.disableAnswers();
+  }
+  nextQuestion() {
+    this.questionsService.choose_box();
+    this.currentValuesService.enableAnswers();
+    if (this.prev_stage) {
+      this.prev_stage.classList.remove('current_stage');
+      const next_stage = this.prev_stage.parentElement.previousElementSibling.firstElementChild;
+      next_stage.classList.add('current_stage');
+      this.prev_stage = next_stage;
+      console.log(this.prev_stage);
+      // const stageText = <HTMLElement>document.getElementsByClassName('stage_text')[0];
+      // stageText.style.color = 'white';
+      // prev_stage.parentElement.previousElementSibling.firstElementChild.nextElementSibling.classList.add('text-white');
+    } else {
+      this.prev_stage = document.querySelectorAll('.stage-1')[0];
+      console.log(this.prev_stage);
+      this.prev_stage.classList.add('current_stage');
+    }
+  }
+  ngOnChanges() {
+    this.currentValuesService.disableAnswers();
+  }
   ngOnInit() {
-    this.nextQuestion();
+    this.currentValuesService.disableAnswers();
+    setTimeout(() => {
+      this.nextQuestion();
+    }, 3000);
   }
-  nextQuestion(){
-    this.question_box = this.questionsService.choose_pack();
-    this.question = this.question_box[0];
-    this.answers = this.question_box[1];
-    this.correct = this.question_box[2];
-    this.corr.emit(this.correct);
-    this.answers2.emit(this.answers);
-    this.correctValueService.saveValue(this.correct);
-    const stage = <HTMLElement>document.getElementsByClassName('current_stage')[0];
-    stage.style.border = '4px solid rgb(222, 178, 47)';
-    stage.style.backgroundColor = 'rgba(221, 176, 31, 0.7)';
-    const stageText = <HTMLElement>document.getElementsByClassName('stage_text')[0];
-    stageText.style.color = 'white';
-  }
-
 
 }

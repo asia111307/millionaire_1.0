@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { PresenterTextService } from './presenter-text.service';
+import {PresenterTextService} from './presenter-text.service';
 
 describe('PresenterTextService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

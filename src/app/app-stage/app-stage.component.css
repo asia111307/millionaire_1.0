@@ -10,6 +10,11 @@
   display: block;
 }
 
+.current_stage {
+  border: 4px solid rgb(222, 178, 47);
+  background-color: rgba(221, 176, 31, 0.7);
+}
+
 .stage div div {
   border-radius: 15%;
   border: 3px solid white;

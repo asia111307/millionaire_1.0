@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { RankListService } from './rank-list.service';
+import {RankListService} from './rank-list.service';
 
 describe('RankListService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

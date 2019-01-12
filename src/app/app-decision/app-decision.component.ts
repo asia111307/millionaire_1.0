@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {IsAnswerCorrectService} from '../is-answer-correct.service';
+import {Component, OnInit} from '@angular/core';
 import {AppAnswQuestComponent} from '../app-answ-quest/app-answ-quest.component';
+import {QuestionsService} from '../questions.service';
+import {Router} from '@angular/router';
+import {CurrentValuesService} from '../current-values.service';
 
 @Component({
   providers: [AppAnswQuestComponent],
@@ -10,15 +12,29 @@ import {AppAnswQuestComponent} from '../app-answ-quest/app-answ-quest.component'
 })
 export class AppDecisionComponent implements OnInit {
   isCorrect: boolean;
-  current_text: string;
-  constructor(private isAnswerCorrectService: IsAnswerCorrectService,  private answQuestCoponent: AppAnswQuestComponent) { }
-
-  ngOnInit() {
-    this.isCorrect = this.isAnswerCorrectService.readValue();
-  }
-
+  constructor(
+    private router: Router,
+    private currentValuesService: CurrentValuesService,
+    private answQuestCoponent: AppAnswQuestComponent,
+    private questionsService: QuestionsService
+  ) {}
   nextQuestion() {
-  this.answQuestCoponent.ngOnInit();
-}
-
+    this.currentValuesService.disableAnswers();
+    const answ = document.querySelectorAll('.answer');
+    for (let i = 0; i < answ.length; i++) {
+      answ[i].classList.remove('selected-answer');
+      answ[i].classList.remove('correct-answer');
+    }
+    const answ_p = document.querySelectorAll('.answer_p');
+    for (let i = 0; i < answ.length; i++) {
+      (<HTMLElement>answ_p[i]).style.display = 'block';
+      (<HTMLElement>answ_p[i]).style.pointerEvents = 'auto';
+    }
+    this.questionsService.clearValues();
+    this.router.navigate(['/']);
+    this.answQuestCoponent.ngOnInit();
+  }
+  ngOnInit() {
+    this.isCorrect = this.currentValuesService.readIsAnswerCorrect();
+  }
 }

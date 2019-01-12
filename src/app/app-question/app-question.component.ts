@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component} from '@angular/core';
+import {QuestionsService} from '../questions.service';
 
 @Component({
   selector: 'app-question',
@@ -6,6 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./app-question.component.css']
 })
 export class AppQuestionComponent {
-  @Input() question = '';
-  constructor() {}
+  question: string;
+  constructor(
+    private questionsService: QuestionsService
+  ) {
+    this.questionsService.question$.subscribe((question: string) => { this.question = question; } );
+  }
 }
