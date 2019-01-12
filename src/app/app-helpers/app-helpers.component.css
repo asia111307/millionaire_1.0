@@ -15,7 +15,7 @@
   text-align: center;
   width: 75px;
   height: 75px;
-  margin: 0 auto;
+  margin: 0 10px;
 }
 .phone {
   margin: 0 15px;
@@ -48,7 +48,7 @@
   background-image: url("../../assets/pics/50.png");
 }
 
-.people-icon, .phone-icon, .user-icon, .half-icon {
+.people-icon, .phone-icon, .half-icon {
   border-radius: 50%;
   background-color: white;
   padding: 0;
@@ -57,6 +57,7 @@
   display: flex;
   align-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .disabled {

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {STRINGS} from '../strings';
 import {PresenterTextService} from '../presenter-text.service';
 import {QuestionsService} from '../questions.service';
@@ -8,7 +8,7 @@ import {QuestionsService} from '../questions.service';
   templateUrl: './app-helpers.component.html',
   styleUrls: ['./app-helpers.component.css']
 })
-export class AppHelpersComponent {
+export class AppHelpersComponent implements OnInit {
   isHalfUsed = false;
   correct: string;
   answers: any;
@@ -46,5 +46,8 @@ export class AppHelpersComponent {
         }
       }
     }
+  }
+  ngOnInit() {
+    this.correct = this.questionsService.correct;
   }
 }

@@ -27,7 +27,20 @@ export class AppPeopleComponent implements OnInit {
       this.isPeopleUsed = true;
     }
     // this.current_text = this.strings[17];
-    const KNOWS = ['know', 'not_know', 'know', 'know'];
+    let correct_answer = '';
+    if (this.correct === 'answer_a') {
+      correct_answer = 'A';
+    }
+    if (this.correct === 'answer_b') {
+      correct_answer = 'B';
+    }
+    if (this.correct === 'answer_c') {
+      correct_answer = 'C';
+    }
+    if (this.correct === 'answer_d') {
+      correct_answer = 'D';
+    }
+    const KNOWS = ['know', 'not_know', 'know', 'know', 'know'];
     const know = KNOWS[Math.floor(Math.random() * KNOWS.length)];
     console.log(know);
     const ANSWRS = ['A', 'B', 'C', 'D'];
@@ -39,7 +52,7 @@ export class AppPeopleComponent implements OnInit {
       const d: number = 100 - corr_percent - b - c;
       const possibles = [b, c, d];
       for (let i = 0; i < 4; i++) {
-        if (ANSWRS[i] === this.correct) {
+        if (ANSWRS[i] === correct_answer) {
           OUTCOME[ANSWRS[i]] = corr_percent;
         } else {
           const random_answr_perc = possibles[Math.floor(Math.random() * 3)];
@@ -70,23 +83,12 @@ export class AppPeopleComponent implements OnInit {
     document.getElementById('white-bar_d').style.height = `${100 - this.d}%`;
   }
   ngOnInit() {
+    this.correct = this.questionsService.correct;
     const people_hover = document.getElementById('people');
     people_hover.style.pointerEvents = 'none';
     const people = document.getElementById('people_2');
     people.classList.add('disabled');
     console.log(this.correct);
-    if (this.correct === 'answer_a') {
-      this.correct = 'A';
-    }
-    if (this.correct === 'answer_b') {
-      this.correct = 'B';
-    }
-    if (this.correct === 'answer_c') {
-      this.correct = 'C';
-    }
-    if (this.correct === 'answer_d') {
-      this.correct = 'D';
-    }
     setTimeout(() => {this.handlePeople(); }, 2200);
   }
 }

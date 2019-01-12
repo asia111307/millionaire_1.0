@@ -7,7 +7,8 @@
 }
 .phone-icon {
   text-align: center;
-  padding: 0 25px;
+  padding: 10px 25px;
+  display: block;
 }
 .phone-background {
   background-color: white;
@@ -15,10 +16,14 @@
   border-radius: 7%;
 }
 .icon {
-  margin: 30px 0;
+  width: 45px;
+  height: 45px;
+  background-image: url("../../assets/pics/phone-icon.png");
+  background-size: contain;
 }
 .phone {
-  display: inline;
+  display: flex;
+  padding: 20px 0;
 }
 .name {
   width: 50%;
@@ -30,4 +35,3 @@
 .message {
   font-size: 16px;
 }
-

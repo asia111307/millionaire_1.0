@@ -12,6 +12,7 @@ export class QuestionsService {
   question$: Observable<string>;
   answers$: Observable<any>;
   correct$: Observable<string>;
+  correct: string;
   private used_questionsSubject: Subject<any>;
   private questBoxSubject: Subject<any>;
   private questionSubject: Subject<string>;
@@ -57,21 +58,22 @@ export class QuestionsService {
   }
   set_correct(quest_box) {
     if (quest_box[2] === 'a') {
+      this.correct = 'answer_a';
       this.correctSubject.next('answer_a');
-      return 'answer_a';
     }
     if (quest_box[2] === 'b') {
+      this.correct = 'answer_b';
       this.correctSubject.next('answer_b');
-      return 'answer_b';
     }
     if (quest_box[2] === 'c') {
+      this.correct = 'answer_c';
       this.correctSubject.next('answer_c');
-      return 'answer_c';
     }
     if (quest_box[2] === 'd') {
+      this.correct = 'answer_d';
       this.correctSubject.next('answer_d');
-      return 'answer_d';
     }
+    return this.correct;
   }
   choose_box() {
     const question_pack = this.open_quest_pack();
