@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {STRINGS} from '../strings';
 
 @Component({
   selector: 'app-textbox',
@@ -6,7 +7,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./app-textbox.component.css']
 })
 export class AppTextboxComponent {
-
+  strings = STRINGS;
   constructor() { }
 
 }
