@@ -31,6 +31,7 @@ export class AppDecisionComponent implements OnInit {
       (<HTMLElement>answ_p[i]).style.pointerEvents = 'auto';
     }
     this.questionsService.clearValues();
+    this.router.navigate(['/']);
     this.answQuestCoponent.nextQuestion();
   }
   restartGame() {
