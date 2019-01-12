@@ -5,6 +5,7 @@
   background-image: url(/assets/pics/background.png);
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .main-window {
