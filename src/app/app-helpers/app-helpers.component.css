@@ -6,10 +6,6 @@
   margin-top: 10px;
 }
 
-.people_2 div:focus, .phone_2 div:focus, .half_2 div:focus {
-  outline: 0;
-}
-
 .people, .phone, .half {
   display: block;
   text-align: center;
