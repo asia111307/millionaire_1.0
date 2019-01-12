@@ -34,6 +34,13 @@
   margin-top: -22px;
 }
 
+.presenter-img {
+  background-image: url("../assets/pics/presenter.png");
+  width: 302px;
+  height: 439px;
+  background-size: contain;
+}
+
 .answ-quest {
   display: block;
   width: 100%;

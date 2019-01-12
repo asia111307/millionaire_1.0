@@ -6,7 +6,7 @@
   margin-top: 10px;
 }
 
-.people_2 button:focus, .phone_2 button:focus, .half_2 button:focus {
+.people_2 div:focus, .phone_2 div:focus, .half_2 div:focus {
   outline: 0;
 }
 
@@ -27,18 +27,36 @@
   margin: 0 auto;
   display: flex;
   padding: 10px;
+
 }
 
-.phone img, .people img, .user img, .half img {
-  width: 55px;
-  height: 55px;
-  padding: 10px;
+.people-icon-inner, .phone-icon-inner, .half-icon-inner {
+  width: 45px;
+  height: 45px;
+  margin-left: 4px;
+  background-size: contain;
+
+}
+
+.people-icon-inner {
+  background-image: url("../../assets/pics/audience.png");
+}
+.phone-icon-inner {
+  background-image: url("../../assets/pics/phone.png");
+}
+.half-icon-inner {
+  background-image: url("../../assets/pics/50.png");
 }
 
 .people-icon, .phone-icon, .user-icon, .half-icon {
   border-radius: 50%;
   background-color: white;
   padding: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-content: center;
+  align-items: center;
 }
 
 .disabled {

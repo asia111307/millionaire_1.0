@@ -32,7 +32,10 @@ export class AppDecisionComponent implements OnInit {
     }
     this.questionsService.clearValues();
     this.router.navigate(['/']);
-    this.answQuestCoponent.ngOnInit();
+    this.answQuestCoponent.nextQuestion();
+  }
+  restartGame() {
+    window.location.reload();
   }
   ngOnInit() {
     this.isCorrect = this.currentValuesService.readIsAnswerCorrect();
