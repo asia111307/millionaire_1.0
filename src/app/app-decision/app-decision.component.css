@@ -54,3 +54,9 @@ button p {
   margin-top: 10px;
 }
 
+@media (max-width: 1199px) {
+  .decision {
+    margin: 0 auto;
+  }
+
+}

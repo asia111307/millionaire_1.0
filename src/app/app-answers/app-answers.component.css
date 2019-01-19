@@ -24,6 +24,7 @@
   min-height: 50px;
   display: flex;
   align-items: center;
+  font-size: 17px;
 }
 
 .answer-a:hover, .answer-b:hover, .answer-c:hover, .answer-d:hover, .answer-a:hover span, .answer-b:hover span,
@@ -62,5 +63,4 @@
   .answers-a-b, .answers-c-d {
     display: block;
   }
-  
 }

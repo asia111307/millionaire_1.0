@@ -20,12 +20,23 @@ export class AppStartMenuComponent implements OnInit {
     private router: Router,
     private answQuestComponent: AppAnswQuestComponent
   ) {}
-  getName(name) {
-    this.currentValuesService.saveName(name);
-    this.answQuestComponent.nextQuestion();
-    this.router.navigate(['/main']);
+  startGame(name) {
+    if (name) {
+      (<HTMLElement>document.querySelector('app-top-nav')).style.display = 'block';
+      (<HTMLElement>document.querySelector('app-answ-quest')).style.display = 'block';
+      (<HTMLElement>document.querySelector('app-stage')).style.display = 'block';
+      (<HTMLElement>document.querySelector('.presenter')).style.display = 'block';
+      this.currentValuesService.saveName(name);
+      this.answQuestComponent.nextQuestion();
+      this.router.navigate(['/main']);
+    }
   }
+  seeInstructions() {}
   ngOnInit() {
+    (<HTMLElement>document.querySelector('app-top-nav')).style.display = 'none';
+    (<HTMLElement>document.querySelector('app-answ-quest')).style.display = 'none';
+    (<HTMLElement>document.querySelector('app-stage')).style.display = 'none';
+    (<HTMLElement>document.querySelector('.presenter')).style.display = 'none';
     this.current_text = this.strings[0];
   }
 }

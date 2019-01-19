@@ -1,9 +1,16 @@
+.startmenu, .buttons {
+  display: block;
+}
+.startgame {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+
 .start-menu {
   display: flex;
   text-align: center;
-  align-items: center;
   justify-content: center;
-  padding: 0 20px;
   margin-top: 15%;
 }
 
@@ -43,4 +50,11 @@
 
 .start-menu button p {
   font-size: 18px;
+}
+
+
+@media (max-width: 1199px) {
+  .startmenu, .start-menu, .startgame, .buttons {
+    display: block;
+  }
 }

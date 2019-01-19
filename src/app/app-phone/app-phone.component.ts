@@ -46,19 +46,19 @@ export class AppPhoneComponent implements OnInit {
     this.random_name = NAMES[Math.floor(Math.random() * NAMES.length)];
     const THINKING = [STRINGS[20], STRINGS[21], STRINGS[22]];
     const think = THINKING[Math.floor(Math.random() * THINKING.length)];
-    setTimeout(() => {this.message = `${think}`; }, 2200);
+    setTimeout(() => {this.message = `${think}`; }, 2000);
     const KNOWS = ['know', 'not_know'];
     const know = KNOWS[Math.floor(Math.random() * KNOWS.length)];
     if (know === 'know') {
       const texts = [STRINGS[8], STRINGS[9], STRINGS[10], STRINGS[11]];
       const response = texts[Math.floor(Math.random() * texts.length)];
-      setTimeout(() => {this.message = `${response} ${correct_answer}.`; }, 5200);
+      setTimeout(() => {this.message = `${response} ${correct_answer}.`; }, 5000);
     } else if (know === 'not_know') {
       const texts = [STRINGS[12], STRINGS[13], STRINGS[14], STRINGS[15]];
       const RAND_GROUP = ['A', 'B', 'C', 'D'];
       const response = texts[Math.floor(Math.random() * texts.length)];
       const rand_answer = RAND_GROUP[Math.floor(Math.random() * RAND_GROUP.length)];
-      setTimeout(() => {this.message = `${response} ${rand_answer}.`; }, 5200);
+      setTimeout(() => {this.message = `${response} ${rand_answer}.`; }, 5000);
     }
   }
   ngOnInit() {

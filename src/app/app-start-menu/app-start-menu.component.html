@@ -1,8 +1,13 @@
-<app-textbox></app-textbox>
-<div class="start-menu">
-  <form>
-    <input type="text" #username_input placeholder="Type your name"
-           name="username" autofocus maxlength="13" minlength="3" required>
-    <button type="button" (click)="getName(username_input.value)"><p class="text-white"> Zaczynamy!</p></button>
-  </form>
+<div class="startmenu">
+  <app-textbox></app-textbox>
+  <div class="start-menu">
+    <form class="buttons">
+      <div class="startgame">
+        <input type="text" #username_input placeholder="Type your name"
+               name="username" autofocus maxlength="13" minlength="3" required>
+        <button type="button" (click)="startGame(username_input.value)"><p class="text-white"> Zaczynamy!</p></button>
+      </div>
+      <button type="button" (click)="seeInstructions()"><p class="text-white"> Poznaj zasady gry </p></button>
+    </form>
+  </div>
 </div>

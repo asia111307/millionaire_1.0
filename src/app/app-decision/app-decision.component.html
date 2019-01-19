@@ -1,4 +1,3 @@
-<app-textbox></app-textbox>
 <div class="decision">
   <div class="decision-background">
     <div *ngIf="isCorrect" class="decision-box">
@@ -7,7 +6,7 @@
       </div>
       <div class="buttons">
         <button type="submit" (click)="nextQuestion()"><p class="text-white"> Gram dalej!</p></button>
-        <button type="submit"><p class="text-white"> Kończę grę </p></button>
+        <button type="submit" (click)="restartGame()"><p class="text-white"> Kończę grę </p></button>
       </div>
     </div>
     <div *ngIf="!isCorrect" class="decision-box">

@@ -89,6 +89,6 @@ export class AppPeopleComponent implements OnInit {
     const people = document.getElementById('people_2');
     people.classList.add('disabled');
     console.log(this.correct);
-    setTimeout(() => {this.handlePeople(); }, 2200);
+    setTimeout(() => {this.handlePeople(); }, 2000);
   }
 }

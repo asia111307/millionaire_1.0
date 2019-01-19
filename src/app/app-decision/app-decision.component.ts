@@ -26,12 +26,12 @@ export class AppDecisionComponent implements OnInit {
       answ[i].classList.remove('correct-answer');
     }
     const answ_p = document.querySelectorAll('.answer_p');
-    for (let i = 0; i < answ.length; i++) {
-      (<HTMLElement>answ_p[i]).style.display = 'block';
-      (<HTMLElement>answ_p[i]).style.pointerEvents = 'auto';
+    for (let j = 0; j < answ.length; j++) {
+      (<HTMLElement>answ_p[j]).style.display = 'block';
+      (<HTMLElement>answ_p[j]).parentElement.style.pointerEvents = 'none';
     }
     this.questionsService.clearValues();
-    this.router.navigate(['/']);
+    this.router.navigate(['/main']);
     this.answQuestCoponent.nextQuestion();
   }
   restartGame() {

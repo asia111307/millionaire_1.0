@@ -37,7 +37,7 @@ export class AppAnswQuestComponent implements OnInit {
         this.prev_stage.style.backgroundColor = 'rgba(221, 176, 31, 0.6)';
         console.log(this.prev_stage);
       }
-    }, 3000);
+    }, 2000);
   }
   ngOnInit() {
     this.currentValuesService.disableAnswers();

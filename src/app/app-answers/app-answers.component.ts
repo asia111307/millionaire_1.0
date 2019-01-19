@@ -28,14 +28,14 @@ export class AppAnswersComponent implements OnInit, OnChanges {
       setTimeout(() => {
         answ.classList.add('correct-answer');
         this.router.navigate(['decision']);
-        }, 3000);
+        }, 2000);
     } else {
       this.currentValuesService.updateIsAnswerCorrect(false);
       const corr = document.getElementById(this.correct);
       setTimeout(() => {
         corr.classList.add('correct-answer');
         this.router.navigate(['decision']);
-        }, 3000);
+        }, 2000);
     }
   }
   ngOnChanges(changes: SimpleChanges) {

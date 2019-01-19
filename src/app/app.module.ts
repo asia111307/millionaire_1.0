@@ -23,6 +23,7 @@ import {CurrentValuesService} from './current-values.service';
 import {RankListService} from './rank-list.service';
 import {GetNameService} from './get-name.service';
 import {PresenterTextService} from './presenter-text.service';
+import {AppWelcomeComponent} from './app-welcome/app-welcome.component';
 
 const components = [
   AppComponent,
@@ -39,7 +40,8 @@ const components = [
   AppPeopleComponent,
   AppPhoneComponent,
   AppMainWindowComponent,
-  AppDecisionComponent
+  AppDecisionComponent,
+  AppWelcomeComponent
 ];
 
 @NgModule({

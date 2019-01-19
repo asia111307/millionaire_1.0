@@ -28,17 +28,17 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-
 }
 .container {
   width: 90%;
   text-align: center;
   padding: 2% 0;
+  min-height: 800px;
 }
 
 .main_w {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
