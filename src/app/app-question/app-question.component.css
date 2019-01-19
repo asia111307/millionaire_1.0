@@ -1,15 +1,16 @@
 .question {
-  display: block;
-  padding: 10px 5px 0 5px;
-  margin: 15px 0 12px 0;
+  display: flex;
+  padding: 5px;
+  margin: 12px 0;
   border-radius: 15%;
   border: 5px solid white;
   background-color: rgba(40, 70, 151, 0.8);
-  line-height: 30px;
-  height: 85px;
+  min-height: 85px;
   font-weight: bold;
   float: left;
   width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .question p {

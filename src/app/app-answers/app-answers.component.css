@@ -16,15 +16,14 @@
 
 .answer-a, .answer-b, .answer-c, .answer-d {
   padding: 5px;
-  padding-left: 2%;
-  margin-bottom: 2px;
   width: 100%;
   border-radius: 15%;
   border: 5px solid white;
   background-color: rgba(40, 70, 151, 0.8);
   font-weight: bold;
-  line-height: 30px;
-  height: 50px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
 }
 
 .answer-a:hover, .answer-b:hover, .answer-c:hover, .answer-d:hover, .answer-a:hover span, .answer-b:hover span,
@@ -56,4 +55,12 @@
 
 .correct-answer p {
   color: white;
+}
+
+
+@media (max-width: 1199px) {
+  .answers-a-b, .answers-c-d {
+    display: block;
+  }
+  
 }

@@ -53,3 +53,9 @@
   height: 99%;
 }
 
+@media (max-width: 1199px) {
+  .helper-people {
+    margin: 0 auto;
+  }
+
+}

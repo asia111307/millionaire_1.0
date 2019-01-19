@@ -1,9 +1,9 @@
 .helpers {
-  width: 80%;
   height: 100%;
   text-align: center;
   display: flex;
   margin-top: 10px;
+  justify-content: center;
 }
 
 .people, .phone, .half {
@@ -79,4 +79,10 @@
 
 .helpers .people:hover .people_2, .helpers .phone:hover .phone_2, .helpers .half:hover .half_2, .answer-a:hover, .answer-b:hover, .answer-c:hover, .answer-d:hover {
   background-color: rgba(159, 179, 222, 0.8)
+}
+
+@media (max-width: 1199px) {
+  .top-nav {
+    display: block;
+  }
 }

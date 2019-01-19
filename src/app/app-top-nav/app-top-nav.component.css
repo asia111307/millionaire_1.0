@@ -1,6 +1,13 @@
 .top-nav {
   padding: 0;
   display: flex;
-  margin-left: 15px;
   margin-top: 0;
+  text-align: center;
+}
+
+@media (max-width: 1199px) {
+  .top-nav {
+    display: block;
+  }
+
 }
