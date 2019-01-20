@@ -1,28 +1,22 @@
 ::-webkit-scrollbar {
   width: 0px;  /* remove scrollbar space */
 }
-
 *:focus {
   outline: none;
 }
-
 body {
   background: rgba(0,0,0, 0.9);
 }
-
 .text-white {
   color: white;
 }
-
 .text-orange {
   color: rgb(222, 178, 47);
 }
-
 .current_stage {
   border: 4px solid rgb(222, 178, 47);
   background-color: rgba(221, 176, 31, 0.6);
 }
-
 .content {
   background-image: url(/assets/pics/background.png);
   background-repeat: no-repeat;
@@ -35,25 +29,39 @@ body {
   padding: 2% 0;
   min-height: 800px;
 }
-
 .main_w {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
 }
-
+.presenter {
+  display: flex;
+  align-items: flex-end;
+}
 .presenter-img {
   background-image: url("/assets/pics/presenter.png");
   width: 302px;
   height: 439px;
   background-size: contain;
 }
-
-.fixed {
-  position: fixed;
+button {
+  width: 200px;
+  background-color: rgba(40, 70, 151, 0.8);
+  border-radius: 50px;
+  line-height: 50px;
+  margin-top: 10px;
+  border: none;
+  height: 50px;
+  outline: none;
+}
+button:hover {
+  background-color: rgba(159, 179, 222, 0.8)
+}
+button p {
+  font-size: 18px;
 }
 
-@media (max-width: 1199px) {
+@media (max-width:1170px) {
   .main_w {
     display: block;
   }

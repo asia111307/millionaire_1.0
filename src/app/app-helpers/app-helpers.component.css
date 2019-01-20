@@ -3,37 +3,32 @@
   text-align: center;
   display: flex;
   margin-top: 10px;
+  margin-right: 200px;
   justify-content: center;
 }
-
 .people, .phone, .half {
   display: block;
   text-align: center;
-  width: 75px;
-  height: 75px;
-  margin: 0 10px;
+  width: 80px;
+  height: 80px;
+  margin: 0 80px;
 }
 .phone {
   margin: 0 15px;
 }
-
 .people_2, .phone_2, .half_2 {
   background-color: rgba(40, 70, 151, 0.8);
   border-radius: 50%;
   margin: 0 auto;
   display: flex;
   padding: 10px;
-
 }
-
 .people-icon-inner, .phone-icon-inner, .half-icon-inner {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   margin-left: 4px;
   background-size: contain;
-
 }
-
 .people-icon-inner {
   background-image: url("../../assets/pics/audience.png");
 }
@@ -43,7 +38,6 @@
 .half-icon-inner {
   background-image: url("../../assets/pics/50.png");
 }
-
 .people-icon, .phone-icon, .half-icon {
   border-radius: 50%;
   background-color: white;
@@ -54,17 +48,11 @@
   align-content: center;
   align-items: center;
   cursor: pointer;
+  margin-top: 0;
 }
-
-.disabled {
-  background-color: rgba(164, 160, 155, 0.8);
-  cursor: default;
-}
-
 .helper-hover-people, .helper-disabled-people, .helper-hover-phone, .helper-disabled-phone, .helper-hover-half, .helper-disabled-half {
   display: none;
 }
-
 .helpers .people:hover .helper-hover-people, .helpers .phone:hover .helper-hover-phone, .helpers .half:hover .helper-hover-half {
   display: block;
   background-color: rgba(40, 70, 151, 0.8);
@@ -76,12 +64,15 @@
   margin-top: 10px;
   margin-left: -55px;
 }
-
 .helpers .people:hover .people_2, .helpers .phone:hover .phone_2, .helpers .half:hover .half_2, .answer-a:hover, .answer-b:hover, .answer-c:hover, .answer-d:hover {
   background-color: rgba(159, 179, 222, 0.8)
 }
+.disabled {
+  background-color: rgba(164, 160, 155, 0.8);
+  cursor: none;
+}
 
-@media (max-width: 1199px) {
+@media (max-width: 1170px) {
   .top-nav {
     display: block;
   }

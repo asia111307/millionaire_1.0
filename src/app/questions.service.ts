@@ -38,17 +38,16 @@ export class QuestionsService {
     }
   }
   choose_question_box(quest_pack) {
-    const quest_box = quest_pack[Math.floor(Math.random() * quest_pack.length)];
-    if (this.used_questions.includes(quest_box)) {
+    let quest_box = quest_pack[Math.floor(Math.random() * quest_pack.length)];
+    while (this.used_questions.includes(quest_box)) {
       console.log('already used');
-      this.choose_question_box(this.open_quest_pack());
-    } else {
-      this.used_questionsSubject.next(quest_box);
-      this.used_questions.push(quest_box);
-      QUESTIONS.splice(QUESTIONS.indexOf(quest_pack), 1);
-      this.questBoxSubject.next(quest_box);
-      return quest_box;
+      quest_box = quest_pack[Math.floor(Math.random() * quest_pack.length)];
     }
+    this.used_questionsSubject.next(quest_box);
+    this.used_questions.push(quest_box);
+    QUESTIONS.splice(QUESTIONS.indexOf(quest_pack), 1);
+    this.questBoxSubject.next(quest_box);
+    return quest_box;
   }
   set_question(quest_box) {
     this.questionSubject.next(quest_box[0]);

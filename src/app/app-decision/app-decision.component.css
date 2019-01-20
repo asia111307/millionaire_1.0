@@ -2,8 +2,8 @@
   border-radius: 10%;
   border: 10px solid rgba(40, 70, 151, 0.8);
   height: 250px;
-  margin: 35px 0 0 25px;
-  width: 400px;
+  margin: 50px 0 0 0;
+  width: 380px;
 }
 .decision-box {
   text-align: center;
@@ -30,33 +30,12 @@
 .message {
   font-size: 16px;
 }
-
-button {
-  width: 200px;
-  background-color: rgba(40, 70, 151, 0.8);
-  border-radius: 50px;
-  line-height: 50px;
-  margin-top: 10px;
-  border: none;
-  height: 50px;
-  outline: none;
-}
-
-button:hover {
-  background-color: rgba(159, 179, 222, 0.8)
-}
-
-button p {
-  font-size: 18px;
-}
-
 .buttons {
   margin-top: 10px;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1170px) {
   .decision {
     margin: 0 auto;
   }
-
 }

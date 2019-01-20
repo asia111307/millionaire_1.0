@@ -19,7 +19,8 @@ export class AppDecisionComponent implements OnInit {
     private questionsService: QuestionsService
   ) {}
   nextQuestion() {
-    this.currentValuesService.disableAnswers();
+    this.currentValuesService.disableAnswersAndHelpers();
+    this.currentValuesService.updateIsHalfUsed(false);
     const answ = document.querySelectorAll('.answer');
     for (let i = 0; i < answ.length; i++) {
       answ[i].classList.remove('selected-answer');

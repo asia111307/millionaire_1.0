@@ -11,12 +11,10 @@ import {CapitalizePipe} from '../capitalize.pipe';
 export class AppUserpanelComponent {
   name = '';
   constructor(
-    private currentValuesService: CurrentValuesService,
-    private capitalize: CapitalizePipe
+    private currentValuesService: CurrentValuesService
   ) {
     this.currentValuesService.name$.subscribe((name: string) => { this.name = name; } );
   }
-
 }
 
 

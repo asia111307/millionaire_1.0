@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AppPhoneComponent } from './app-phone.component';
+import {AppPhoneComponent} from './app-phone.component';
 
 describe('AppPhoneComponent', () => {
   let component: AppPhoneComponent;

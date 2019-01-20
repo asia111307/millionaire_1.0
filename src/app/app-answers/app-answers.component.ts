@@ -8,7 +8,7 @@ import {CurrentValuesService} from '../current-values.service';
   templateUrl: './app-answers.component.html',
   styleUrls: ['./app-answers.component.css']
 })
-export class AppAnswersComponent implements OnInit, OnChanges {
+export class AppAnswersComponent implements OnInit {
   answers: any;
   correct: string;
   constructor(
@@ -20,7 +20,8 @@ export class AppAnswersComponent implements OnInit, OnChanges {
     this.questionsService.correct$.subscribe((correct: string) => { this.correct = correct; } );
   }
   checkAnswer(answer) {
-    this.currentValuesService.disableAnswers();
+    this.currentValuesService.disableAnswersAndHelpers();
+    (<HTMLButtonElement>document.getElementsByClassName('endGameButton')[0]).style.pointerEvents = 'none';
     const answ = document.getElementById(answer);
     answ.classList.add('selected-answer');
     if (answer === this.correct) {
@@ -38,10 +39,9 @@ export class AppAnswersComponent implements OnInit, OnChanges {
         }, 2000);
     }
   }
-  ngOnChanges(changes: SimpleChanges) {
-    this.currentValuesService.disableAnswers();
-  }
   ngOnInit() {
-    this.currentValuesService.disableAnswers();
+    this.currentValuesService.disableAnswersAndHelpers();
+    (<HTMLButtonElement>document.getElementsByClassName('endGameButton')[0]).style.pointerEvents = 'none';
+
   }
 }

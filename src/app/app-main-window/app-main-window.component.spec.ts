@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AppMainWindowComponent } from './app-main-window.component';
+import {AppMainWindowComponent} from './app-main-window.component';
 
 describe('AppMainWindowComponent', () => {
   let component: AppMainWindowComponent;

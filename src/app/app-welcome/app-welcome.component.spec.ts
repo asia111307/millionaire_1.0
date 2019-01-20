@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AppWelcomeComponent } from './app-welcome.component';
+import {AppWelcomeComponent} from './app-welcome.component';
 
 describe('AppWelcomeComponent', () => {
   let component: AppWelcomeComponent;

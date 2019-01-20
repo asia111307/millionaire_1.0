@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AppAnswQuestComponent } from './app-answ-quest.component';
+import {AppAnswQuestComponent} from './app-answ-quest.component';
 
 describe('AppAnswQuestComponent', () => {
   let component: AppAnswQuestComponent;

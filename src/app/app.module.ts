@@ -20,7 +20,6 @@ import {AppMainWindowComponent} from './app-main-window/app-main-window.componen
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AppDecisionComponent} from './app-decision/app-decision.component';
 import {CurrentValuesService} from './current-values.service';
-import {RankListService} from './rank-list.service';
 import {GetNameService} from './get-name.service';
 import {PresenterTextService} from './presenter-text.service';
 import {AppWelcomeComponent} from './app-welcome/app-welcome.component';
@@ -51,7 +50,7 @@ const components = [
     CommonModule,
     AppRoutingModule
   ],
-  providers: [QuestionsService, CurrentValuesService, RankListService, GetNameService, PresenterTextService],
+  providers: [QuestionsService, CurrentValuesService, GetNameService, PresenterTextService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

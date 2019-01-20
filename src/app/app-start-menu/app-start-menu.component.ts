@@ -25,7 +25,7 @@ export class AppStartMenuComponent implements OnInit {
       (<HTMLElement>document.querySelector('app-top-nav')).style.display = 'block';
       (<HTMLElement>document.querySelector('app-answ-quest')).style.display = 'block';
       (<HTMLElement>document.querySelector('app-stage')).style.display = 'block';
-      (<HTMLElement>document.querySelector('.presenter')).style.display = 'block';
+      (<HTMLElement>document.querySelector('.presenter')).style.display = 'flex';
       this.currentValuesService.saveName(name);
       this.answQuestComponent.nextQuestion();
       this.router.navigate(['/main']);

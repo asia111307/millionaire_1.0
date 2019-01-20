@@ -8,4 +8,7 @@ import {Component} from '@angular/core';
 export class AppTopNavComponent {
 
   constructor() {}
+  endGame() {
+    window.location.reload();
+  }
 }

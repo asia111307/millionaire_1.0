@@ -8,6 +8,6 @@ import {STRINGS} from '../strings';
 })
 export class AppTextboxComponent {
   strings = STRINGS;
-  constructor() { }
+  constructor() {}
 
 }

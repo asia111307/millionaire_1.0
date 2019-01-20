@@ -11,12 +11,13 @@ export class AppAnswQuestComponent implements OnInit {
   prev_stage: any;
   first = true;
   constructor(private questionsService: QuestionsService, private currentValuesService: CurrentValuesService) {
-    this.currentValuesService.disableAnswers();
+    this.currentValuesService.disableAnswersAndHelpers();
   }
   nextQuestion() {
     setTimeout(() => {
       this.questionsService.choose_box();
-      this.currentValuesService.enableAnswers();
+      this.currentValuesService.enableAnswersAndHelpers();
+      (<HTMLButtonElement>document.getElementsByClassName('endGameButton')[0]).style.pointerEvents = 'auto';
       if (!this.first) {
         this.prev_stage.style.border = '3px solid white';
         this.prev_stage.style.backgroundColor = 'rgba(40, 70, 151, 0.8)';
@@ -40,7 +41,6 @@ export class AppAnswQuestComponent implements OnInit {
     }, 2000);
   }
   ngOnInit() {
-    this.currentValuesService.disableAnswers();
+    this.currentValuesService.disableAnswersAndHelpers();
   }
-
 }

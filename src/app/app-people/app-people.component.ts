@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {STRINGS} from '../strings';
 import {QuestionsService} from '../questions.service';
+import {CurrentValuesService} from '../current-values.service';
 
 @Component({
   selector: 'app-app-people',
@@ -15,10 +16,15 @@ export class AppPeopleComponent implements OnInit {
   b: number;
   c: number;
   d: number;
+  isHalfUsed: boolean;
+  halfAnswers: any;
+  people_outcomes: any;
   constructor(
-    private questionsService: QuestionsService
+    private questionsService: QuestionsService,
+    private currentValuesService: CurrentValuesService,
   ) {
     this.questionsService.correct$.subscribe((correct: string) => { this.correct = correct; } );
+    this.currentValuesService.isHalfUsed$.subscribe((isUsed: boolean) => { this.isHalfUsed = isUsed; } );
   }
   handlePeople() {
     if (this.isPeopleUsed) {
@@ -27,52 +33,62 @@ export class AppPeopleComponent implements OnInit {
       this.isPeopleUsed = true;
     }
     // this.current_text = this.strings[17];
-    let correct_answer = '';
-    if (this.correct === 'answer_a') {
-      correct_answer = 'A';
-    }
-    if (this.correct === 'answer_b') {
-      correct_answer = 'B';
-    }
-    if (this.correct === 'answer_c') {
-      correct_answer = 'C';
-    }
-    if (this.correct === 'answer_d') {
-      correct_answer = 'D';
-    }
-    const KNOWS = ['know', 'not_know', 'know', 'know', 'know'];
+    const correct_answer = this.currentValuesService.mapAnswers(this.correct);
+    const KNOWS = ['not_know', 'know', 'know', 'know'];
     const know = KNOWS[Math.floor(Math.random() * KNOWS.length)];
-    console.log(know);
     const ANSWRS = ['A', 'B', 'C', 'D'];
     const OUTCOME = {};
-    if (know === 'know') {
-      const corr_percent: number = Math.floor(Math.random() * 4 + 51);
-      const b: number = Math.floor(Math.random() * (100 - corr_percent));
-      const c: number = Math.floor(Math.random() * (100 - corr_percent - b));
-      const d: number = 100 - corr_percent - b - c;
-      const possibles = [b, c, d];
+    console.log(know);
+    if (!this.isHalfUsed) {
+      if (know === 'know') {
+        const corr_percent: number = Math.floor(Math.random() * 49 + 51);
+        const b: number = Math.floor(Math.random() * (100 - corr_percent));
+        const c: number = Math.floor(Math.random() * (100 - corr_percent - b));
+        const d: number = 100 - corr_percent - b - c;
+        const possibles = [b, c, d];
+        for (let i = 0; i < 4; i++) {
+          if (ANSWRS[i] === correct_answer) {
+            OUTCOME[ANSWRS[i]] = corr_percent;
+          } else {
+            const random_answr_perc = possibles[Math.floor(Math.random() * 3)];
+            OUTCOME[ANSWRS[i]] = random_answr_perc;
+            possibles.splice(possibles.indexOf(random_answr_perc), 1);
+          }
+        }
+        console.log(corr_percent, b, c, d);
+      } else {
+        const a: number = Math.floor(Math.random() * 51);
+        const b: number = Math.floor(Math.random() * (100 - a));
+        const c: number = Math.floor(Math.random() * (100 - a - b));
+        const d: number = 100 - a - b - c;
+        console.log(a, b, c, d);
+        OUTCOME['A'] = a;
+        OUTCOME['B'] = b;
+        OUTCOME['C'] = c;
+        OUTCOME['D'] = d;
+      }
+      for (let z = 0; z < 4; z++) {
+        (<HTMLElement>this.people_outcomes[z]).style.display = 'inline-block';
+      }
+    } else {
+      const second_answer = this.currentValuesService.mapAnswers(this.halfAnswers[1]);
+      let corr_percent: number;
+      if (know === 'know') {
+        corr_percent = Math.floor(Math.random() * 49 + 51);
+      } else {
+        corr_percent = Math.floor(Math.random() * 100);
+      }
+      const rest = 100 - corr_percent;
       for (let i = 0; i < 4; i++) {
         if (ANSWRS[i] === correct_answer) {
           OUTCOME[ANSWRS[i]] = corr_percent;
-        } else {
-          const random_answr_perc = possibles[Math.floor(Math.random() * 3)];
-          OUTCOME[ANSWRS[i]] = random_answr_perc;
-          possibles.splice(possibles.indexOf(random_answr_perc), 1);
+          (<HTMLElement>document.getElementsByClassName(ANSWRS[i])[0]).style.display = 'inline-block';
+        } else if (ANSWRS[i] === second_answer) {
+          OUTCOME[second_answer] = rest;
+          (<HTMLElement>document.getElementsByClassName(ANSWRS[i])[0]).style.display = 'inline-block';
         }
       }
-      console.log(corr_percent, b, c, d);
-    } else {
-      const a: number = Math.floor(Math.random() * 51);
-      const b: number = Math.floor(Math.random() * (100 - a));
-      const c: number = Math.floor(Math.random() * (100 - a - b));
-      const d: number = 100 - a - b - c;
-      console.log(a, b, c, d);
-      OUTCOME['A'] = a;
-      OUTCOME['B'] = b;
-      OUTCOME['C'] = c;
-      OUTCOME['D'] = d;
     }
-    console.log(OUTCOME);
     this.a = OUTCOME['A'];
     document.getElementById('white-bar_a').style.height = `${100 - this.a}%`;
     this.b = OUTCOME['B'];
@@ -83,12 +99,18 @@ export class AppPeopleComponent implements OnInit {
     document.getElementById('white-bar_d').style.height = `${100 - this.d}%`;
   }
   ngOnInit() {
+    this.halfAnswers = this.currentValuesService.halfAnswers;
     this.correct = this.questionsService.correct;
     const people_hover = document.getElementById('people');
     people_hover.style.pointerEvents = 'none';
     const people = document.getElementById('people_2');
     people.classList.add('disabled');
     console.log(this.correct);
-    setTimeout(() => {this.handlePeople(); }, 2000);
+    this.people_outcomes = document.getElementsByClassName('people-outcome');
+    for (let k = 0; k < 4; k++) {
+      (<HTMLElement>this.people_outcomes[k]).style.display = 'none';
+    }
+    setTimeout(() => {
+      this.handlePeople(); }, 2000);
   }
 }

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AppHelpersComponent } from './app-helpers.component';
+import {AppHelpersComponent} from './app-helpers.component';
 
 describe('AppHelpersComponent', () => {
   let component: AppHelpersComponent;

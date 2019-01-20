@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AppStartMenuComponent } from './app-start-menu.component';
+import {AppStartMenuComponent} from './app-start-menu.component';
 
 describe('AppStartMenuComponent', () => {
   let component: AppStartMenuComponent;

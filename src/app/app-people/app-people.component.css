@@ -1,8 +1,9 @@
 .helper-people {
   border-radius: 10%;
   border: 10px solid rgba(40, 70, 151, 0.8);
-  margin: 35px 0 0 100px;
+  margin: 50px 0 0 100px;
   width: 280px;
+  height: 250px;
 }
 .label {
   height: 20px;
@@ -53,9 +54,8 @@
   height: 99%;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1170px) {
   .helper-people {
     margin: 0 auto;
   }
-
 }

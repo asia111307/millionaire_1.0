@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AppTextboxComponent } from './app-textbox.component';
+import {AppTextboxComponent} from './app-textbox.component';
 
 describe('AppFooterComponent', () => {
   let component: AppTextboxComponent;

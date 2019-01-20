@@ -8,14 +8,12 @@
   justify-content: left;
   padding-left: 5%;
 }
-
 .footer-down p {
   margin: 0;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1170px) {
   .footer-down {
     justify-content: center;
   }
-
 }

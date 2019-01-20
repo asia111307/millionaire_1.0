@@ -3,7 +3,6 @@
   padding: 10px;
   justify-content: center;
 }
-
 .user {
   width: 270px;
   background-color: rgba(40, 70, 151, 0.8);
@@ -11,19 +10,16 @@
   display: flex;
   padding: 10px;
 }
-
 .user-name {
   display: flex;
   align-content: center;
   align-items: center;
   margin-left: 10px;
 }
-
 .user-name p {
   font-size: 23px;
   font-weight: bold;
 }
-
 .user-icon {
   width:60px;
   height: 60px;
@@ -33,7 +29,6 @@
   background-color: white;
   padding: 0;
 }
-
 .user-icon-inner {
   width: 55px;
   height: 55px;

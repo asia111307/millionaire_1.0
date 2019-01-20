@@ -21,6 +21,6 @@ export const STRINGS = {
   19: 'Dobrze, {{ name.capitalize()) }}. Jaka jest Twoja decyzja?',
   20: 'Hmmm...',
   21: 'O kurczę...',
-  22:  'Ej, coś mi to mówi...',
+  22: 'Ej, coś mi to mówi...',
 
 };

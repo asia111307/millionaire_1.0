@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {STRINGS} from '../strings';
 import {PresenterTextService} from '../presenter-text.service';
 import {QuestionsService} from '../questions.service';
+import {CurrentValuesService} from '../current-values.service';
 
 @Component({
   selector: 'app-helpers',
@@ -9,25 +10,25 @@ import {QuestionsService} from '../questions.service';
   styleUrls: ['./app-helpers.component.css']
 })
 export class AppHelpersComponent implements OnInit {
-  isHalfUsed = false;
+  isHalfUsed: boolean;
   correct: string;
   answers: any;
   strings = STRINGS;
   constructor(
     private questionsService: QuestionsService,
-    private presenterTextService: PresenterTextService
+    private presenterTextService: PresenterTextService,
+    private currentValuesService: CurrentValuesService,
   ) {
     this.questionsService.answers$.subscribe((answers: any) => { this.answers = answers; } );
     this.questionsService.correct$.subscribe((correct: string) => { this.correct = correct; } );
+    this.currentValuesService.isHalfUsed$.subscribe((isUsed: boolean) => { this.isHalfUsed = isUsed; } );
   }
   handleHalf() {
     if (this.isHalfUsed) {
       return this.strings[1];
     } else {
-      this.isHalfUsed = true;
+      this.currentValuesService.updateIsHalfUsed(true);
     }
-    // this.current_text = this.strings[2];
-    // this.presenterTextService.saveValue(this.current_text);
     const half_hover = document.getElementById('half');
     half_hover.style.pointerEvents = 'none';
     const half = document.getElementById('half_2');
@@ -46,6 +47,9 @@ export class AppHelpersComponent implements OnInit {
         }
       }
     }
+    const halfAnswers = [this.correct, answs[this.answers.indexOf(second_answ)]];
+    console.log(halfAnswers);
+    this.currentValuesService.updateHalfAnswers(halfAnswers);
   }
   ngOnInit() {
     this.correct = this.questionsService.correct;

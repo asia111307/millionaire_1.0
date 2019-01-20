@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'decision', component: AppDecisionComponent},
 ];
 @NgModule({
-  exports: [ RouterModule ],
-  imports: [ RouterModule.forRoot(routes)]
+  exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)]
 })
 export class AppRoutingModule {}

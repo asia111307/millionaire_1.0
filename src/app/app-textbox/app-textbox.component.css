@@ -8,18 +8,16 @@
   line-height: 40px;
   width: 100%;
 }
-
 .textbox p {
   margin-bottom: 0;
 }
-
 .text-box {
   display: flex;
   justify-content: center;
   width: 30vw;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1170px) {
   .text-box {
     width: 90%;
   }

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AppTopNavComponent } from './app-top-nav.component';
+import {AppTopNavComponent} from './app-top-nav.component';
 
 describe('AppTopNavComponent', () => {
   let component: AppTopNavComponent;
