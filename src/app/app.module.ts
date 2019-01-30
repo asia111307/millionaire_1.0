@@ -23,6 +23,8 @@ import {CurrentValuesService} from './current-values.service';
 import {GetNameService} from './get-name.service';
 import {PresenterTextService} from './presenter-text.service';
 import {AppWelcomeComponent} from './app-welcome/app-welcome.component';
+import { AppResignationComponent } from './app-resignation/app-resignation.component';
+import { AppSummaryComponent } from './app-summary/app-summary.component';
 
 const components = [
   AppComponent,
@@ -44,7 +46,7 @@ const components = [
 ];
 
 @NgModule({
-  declarations: [components, CapitalizePipe],
+  declarations: [components, CapitalizePipe, AppResignationComponent, AppSummaryComponent],
   imports: [
     BrowserModule,
     CommonModule,

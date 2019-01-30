@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {Router} from '@angular/router';
+import {CurrentValuesService} from '../current-values.service';
 
 @Component({
   selector: 'app-top-nav',
@@ -7,8 +9,12 @@ import {Component} from '@angular/core';
 })
 export class AppTopNavComponent {
 
-  constructor() {}
+  constructor(
+      private router: Router,
+      private currentValuesService: CurrentValuesService
+  ) {}
   endGame() {
-    window.location.reload();
+    this.currentValuesService.disableAnswersAndHelpers();
+    this.router.navigate(['/resignation']);
   }
 }

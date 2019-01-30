@@ -5,7 +5,7 @@ import {BehaviorSubject, Observable, Subject} from 'rxjs';
   providedIn: 'root'
 })
 export class CurrentValuesService {
-  values = [500, 1000, 2000, 5000, 10000, 20000, 40000, 75000, 125000, 250000, 500000, 1000000];
+  values = [0, 500, 1000, 2000, 5000, 10000, 20000, 40000, 75000, 125000, 250000, 500000, 1000000];
   valuesReached = [2000, 40000, 1000000];
   answer_elements = document.getElementsByClassName('answer_p');
   helper_elements = document.getElementsByClassName('helper_e');
@@ -19,22 +19,28 @@ export class CurrentValuesService {
   currentStageValue = 0;
   currentStageValueReached$: Observable<number>;
   currentStageValueReached = 0;
+  endGameBy: string;
+  currentPrize$: Observable<number>;
+  currentPrizeIndex = 0;
   private nameSubject: Subject<string>;
   private currentStageSubject: BehaviorSubject<number>;
   private currentStageValueSubject: BehaviorSubject<number>;
   private currentStageValueReachedSubject: BehaviorSubject<number>;
   private isHalfUsedSubject: BehaviorSubject<boolean>;
+  private currentPrizeSubject: BehaviorSubject<number>;
   constructor() {
     this.nameSubject = new Subject<string>();
     this.currentStageSubject = new BehaviorSubject<number>(0);
     this.currentStageValueSubject = new BehaviorSubject<number>(0);
     this.currentStageValueReachedSubject = new BehaviorSubject<number>(0);
     this.isHalfUsedSubject = new BehaviorSubject<boolean>(false);
+    this.currentPrizeSubject = new BehaviorSubject<number>(0);
     this.name$ = this.nameSubject.asObservable();
     this.currentStage$ = this.currentStageSubject.asObservable();
     this.currentStageValue$ = this.currentStageValueSubject.asObservable();
     this.currentStageValueReached$ = this.currentStageValueReachedSubject.asObservable();
     this.isHalfUsed$ = this.isHalfUsedSubject.asObservable();
+    this.currentPrize$ = this.currentPrizeSubject.asObservable();
   }
   saveName(name) {
     this.nameSubject.next(name);
@@ -63,16 +69,22 @@ export class CurrentValuesService {
       }
     }
   }
+  updateCurrentPrize() {
+    this.currentPrizeIndex++;
+    this.currentPrizeSubject.next(this.values[this.currentPrizeIndex]);
+  }
   updateCurrentStage() {
     this.currentStage = this.currentStage++;
     this.currentStageSubject.next(this.currentStage);
   }
   updateCurrentStageValue() {
-    this.currentStageValue = this.values[this.values.indexOf(this.currentStage)];
+    this.updateCurrentStage();
+    this.currentStageValue = this.values[this.currentStage];
     this.currentStageValueSubject.next(this.currentStageValue);
-  }
-  updateCurrentStageValueReached(value) {
-    this.currentStageValueReachedSubject.next(value);
+    if (this.valuesReached.includes(this.currentStageValue)) {
+      this.currentStageValueReached = this.currentStageValue;
+      this.currentStageValueReachedSubject.next(this.currentStageValueReached);
+    }
   }
   updateIsHalfUsed(value: boolean) {
     this.isHalfUsedSubject.next(value);
@@ -115,12 +127,33 @@ export class CurrentValuesService {
     for (let i = 1; i < this.currentStage; i++) {
       const stage = <HTMLElement>document.getElementsByClassName(`stage-${i}`)[0];
       if (stage.classList.contains('guaranteed')) {
+        const guaranteed = document.getElementsByClassName('guaranteed');
+        for (let k = 0; k < guaranteed.length; k++) {
+          if (guaranteed[k] !== current) {
+            (<HTMLElement>guaranteed[k]).style.border = '3px solid white';
+            (<HTMLElement>guaranteed[k]).style.backgroundColor = 'rgba(40, 70, 151, 0.8)';
+          }
+        }
         stage.style.border = '4px solid rgba(115, 192, 35, 0.8)';
         stage.style.backgroundColor = 'rgba(115, 192, 35, 0.7)';
       } else {
         stage.style.border = '3px solid white';
         stage.style.backgroundColor = 'rgba(40, 70, 151, 0.8)';
       }
+    }
+  }
+  updateEndGame(value) {
+    this.endGameBy = value;
+  }
+  mapPrizes(value) {
+    if (value === 1000000) {
+      return '1 000 000';
+    } else if (value === 500) {
+      return '500';
+    } else if (value === 0) {
+      return '0';
+    }else if (value !== 0) {
+      return `${value / 1000} 000`;
     }
   }
 }

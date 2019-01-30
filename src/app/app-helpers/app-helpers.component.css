@@ -73,7 +73,7 @@
 }
 
 @media (max-width: 1170px) {
-  .top-nav {
-    display: block;
+  .people, .phone, .half, .helpers {
+    margin: 0 5%;
   }
 }

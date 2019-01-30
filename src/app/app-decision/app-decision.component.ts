@@ -12,12 +12,29 @@ import {CurrentValuesService} from '../current-values.service';
 })
 export class AppDecisionComponent implements OnInit {
   isCorrect: boolean;
+  wonPrize: number;
+  wonPrizeValue = '';
   constructor(
     private router: Router,
     private currentValuesService: CurrentValuesService,
     private answQuestCoponent: AppAnswQuestComponent,
     private questionsService: QuestionsService
-  ) {}
+  ) {
+    this.currentValuesService.currentPrize$.subscribe((value: number) => {
+      this.wonPrize = value;
+      if (this.currentValuesService.valuesReached.includes(value)) {
+        this.wonPrizeValue += 'gwarantowaną sumę ';
+      }
+      if (value === 1000000) {
+        this.wonPrizeValue += '1 000 000';
+      } else if (value === 500) {
+        this.wonPrizeValue += '500';
+      } else if (value === 0) {
+        this.wonPrizeValue += '0';
+      } else if (value !== 0) {
+        this.wonPrizeValue += `${value / 1000} 000`;
+      }} );
+  }
   nextQuestion() {
     this.currentValuesService.disableAnswersAndHelpers();
     this.currentValuesService.updateIsHalfUsed(false);
@@ -36,7 +53,8 @@ export class AppDecisionComponent implements OnInit {
     this.answQuestCoponent.nextQuestion();
   }
   restartGame() {
-    window.location.reload();
+    this.currentValuesService.updateEndGame('gameover');
+    this.router.navigate(['/summary']);
   }
   ngOnInit() {
     this.isCorrect = this.currentValuesService.readIsAnswerCorrect();

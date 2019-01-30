@@ -1,0 +1,14 @@
+<div class="decision">
+  <div class="decision-background">
+    <div class="decision-box">
+      <div class="box">
+        <p class="quest">Czy na pewno chcesz przerwać grę?<br></p>
+        <p class="quest">Twoja obecna wygrana to <br>{{ wonPrizeValue }} zł.</p>
+      </div>
+      <div class="buttons">
+        <button type="submit" (click)="endGame()"><span class="text-white"> Tak, kończę grę </span></button>
+        <button type="submit" (click)="resumeGame()"><span class="text-white"> Nie, jednak gram dalej </span></button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,11 +3,11 @@
   <div class="start-menu">
     <form class="buttons">
       <div class="startgame">
-        <input type="text" #username_input placeholder="Type your name"
+        <input type="text" #username_input placeholder="Wpisz swoje imię"
                name="username" autofocus maxlength="13" minlength="3" required>
-        <button #submit type="submit" (click)="startGame(username_input.value)"><p class="text-white"> Zaczynamy!</p></button>
+        <button type="button" (click)="startGame(username_input.value)"><span class="text-white"> Zaczynamy!</span></button>
       </div>
-      <button type="button" (click)="seeInstructions()"><p class="text-white"> Poznaj zasady gry </p></button>
+      <button type="button" (click)="seeInstructions()"><span class="text-white"> Poznaj zasady gry </span></button>
     </form>
   </div>
 </div>

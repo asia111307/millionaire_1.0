@@ -11,4 +11,7 @@
   .top-nav {
     display: block;
   }
+  button {
+    margin-top: 70px;
+  }
 }

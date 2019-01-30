@@ -9,7 +9,7 @@ import {CurrentValuesService} from '../current-values.service';
   styleUrls: ['./app-answers.component.css']
 })
 export class AppAnswersComponent implements OnInit {
-  answers: any;
+  answers = ['', '', '', ''];
   correct: string;
   constructor(
     private router: Router,
@@ -26,6 +26,8 @@ export class AppAnswersComponent implements OnInit {
     answ.classList.add('selected-answer');
     if (answer === this.correct) {
       this.currentValuesService.updateIsAnswerCorrect(true);
+      this.currentValuesService.updateCurrentPrize();
+      this.currentValuesService.updateCurrentStageValue();
       setTimeout(() => {
         answ.classList.add('correct-answer');
         this.router.navigate(['decision']);

@@ -21,11 +21,11 @@ export class AppStartMenuComponent implements OnInit {
     private answQuestComponent: AppAnswQuestComponent
   ) {}
   startGame(name) {
-    if (name && name.length > 3) {
+    if (name && name.length >= 3) {
       this.currentValuesService.showGameElementsAfterStart();
       this.currentValuesService.saveName(name);
       this.router.navigate(['/main']);
-      setTimeout(() => { this.answQuestComponent.nextQuestion()}, 1000);
+      setTimeout(() => { this.answQuestComponent.nextQuestion(); }, 1000);
     }
   }
   seeInstructions() {}

@@ -2,11 +2,11 @@
   <div class="decision-background">
     <div *ngIf="isCorrect" class="decision-box">
       <div class="box">
-        <p class="quest">Super! <br>Jaki jest Twój następny krok?</p>
+        <p class="quest">Super! <br>To jest dobra odpowiedź!</p><br>
+        <p class="quest"> Wygrałeś {{ wonPrizeValue }} zł!</p>
       </div>
       <div class="buttons">
-        <button type="submit" (click)="nextQuestion()"><p class="text-white"> Gram dalej!</p></button>
-        <button type="submit" (click)="restartGame()"><p class="text-white"> Kończę grę </p></button>
+        <button type="submit" (click)="nextQuestion()"><span class="text-white"> Następne pytanie </span></button>
       </div>
     </div>
     <div *ngIf="!isCorrect" class="decision-box">
@@ -14,8 +14,7 @@
         <p class="quest">Niestety, to nie jest dobra odpowiedź.</p>
       </div>
       <div class="buttons">
-        <button type="submit"><p class="text-white"> Zakończ grę </p></button>
-        <button type="submit" (click)="restartGame()"><p class="text-white"> Zagraj jeszcze raz </p></button>
+        <button type="submit" (click)="restartGame()"><span class="text-white"> Zakończ grę </span></button>
       </div>
     </div>
   </div>
