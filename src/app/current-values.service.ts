@@ -94,4 +94,33 @@ export class CurrentValuesService {
       return 'D';
     }
   }
+  hideGameElementsOnStart() {
+    (<HTMLElement>document.querySelector('app-top-nav')).style.display = 'none';
+    (<HTMLElement>document.querySelector('app-answ-quest')).style.display = 'none';
+    (<HTMLElement>document.querySelector('app-stage')).style.display = 'none';
+    (<HTMLElement>document.querySelector('.presenter')).style.display = 'none';
+  }
+  showGameElementsAfterStart() {
+    (<HTMLElement>document.querySelector('app-top-nav')).style.display = 'block';
+    (<HTMLElement>document.querySelector('app-answ-quest')).style.display = 'block';
+    (<HTMLElement>document.querySelector('app-stage')).style.display = 'block';
+    (<HTMLElement>document.querySelector('.presenter')).style.display = 'flex';
+  }
+  updateStage() {
+    this.currentStage += 1;
+    const current = <HTMLElement>document.getElementsByClassName(`stage-${this.currentStage}`)[0];
+    current.style.border = '4px solid rgb(222, 178, 47)';
+    current.style.backgroundColor = 'rgba(221, 176, 31, 0.5)';
+    (<HTMLElement>current.firstElementChild).style.color = 'white';
+    for (let i = 1; i < this.currentStage; i++) {
+      const stage = <HTMLElement>document.getElementsByClassName(`stage-${i}`)[0];
+      if (stage.classList.contains('guaranteed')) {
+        stage.style.border = '4px solid rgba(115, 192, 35, 0.8)';
+        stage.style.backgroundColor = 'rgba(115, 192, 35, 0.7)';
+      } else {
+        stage.style.border = '3px solid white';
+        stage.style.backgroundColor = 'rgba(40, 70, 151, 0.8)';
+      }
+    }
+  }
 }

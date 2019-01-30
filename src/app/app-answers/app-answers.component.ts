@@ -42,6 +42,5 @@ export class AppAnswersComponent implements OnInit {
   ngOnInit() {
     this.currentValuesService.disableAnswersAndHelpers();
     (<HTMLButtonElement>document.getElementsByClassName('endGameButton')[0]).style.pointerEvents = 'none';
-
   }
 }

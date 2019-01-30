@@ -21,22 +21,22 @@ export class AppStartMenuComponent implements OnInit {
     private answQuestComponent: AppAnswQuestComponent
   ) {}
   startGame(name) {
-    if (name) {
-      (<HTMLElement>document.querySelector('app-top-nav')).style.display = 'block';
-      (<HTMLElement>document.querySelector('app-answ-quest')).style.display = 'block';
-      (<HTMLElement>document.querySelector('app-stage')).style.display = 'block';
-      (<HTMLElement>document.querySelector('.presenter')).style.display = 'flex';
+    if (name && name.length > 3) {
+      this.currentValuesService.showGameElementsAfterStart();
       this.currentValuesService.saveName(name);
-      this.answQuestComponent.nextQuestion();
       this.router.navigate(['/main']);
+      setTimeout(() => { this.answQuestComponent.nextQuestion()}, 1000);
     }
   }
   seeInstructions() {}
   ngOnInit() {
-    (<HTMLElement>document.querySelector('app-top-nav')).style.display = 'none';
-    (<HTMLElement>document.querySelector('app-answ-quest')).style.display = 'none';
-    (<HTMLElement>document.querySelector('app-stage')).style.display = 'none';
-    (<HTMLElement>document.querySelector('.presenter')).style.display = 'none';
+    // document.getElementsByTagName('username_input')[0].addEventListener('keyup', function(event: KeyboardEvent) {
+    //   event.preventDefault();
+    //   if (event.key === 'Enter') {
+    //     document.getElementById('submit').click();
+    //   }
+    // });
+    this.currentValuesService.hideGameElementsOnStart();
     this.current_text = this.strings[0];
   }
 }

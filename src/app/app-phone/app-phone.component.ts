@@ -42,8 +42,6 @@ export class AppPhoneComponent implements OnInit {
     setTimeout(() => {this.message = `${think}`; }, 2000);
     const KNOWS = ['not_know', 'know', 'know'];
     const know = KNOWS[Math.floor(Math.random() * KNOWS.length)];
-    console.log(this.isHalfUsed);
-    console.log(know);
     if (know === 'know') {
       const texts = [STRINGS[8], STRINGS[9], STRINGS[10], STRINGS[11]];
       const response = texts[Math.floor(Math.random() * texts.length)];
@@ -55,9 +53,7 @@ export class AppPhoneComponent implements OnInit {
       if (!this.isHalfUsed) {
         RAND_GROUP = ['A', 'B', 'C', 'D'];
       } else {
-        console.log(this.halfAnswers);
         RAND_GROUP = [this.currentValuesService.mapAnswers(this.halfAnswers[0]), this.currentValuesService.mapAnswers(this.halfAnswers[1])];
-        console.log(RAND_GROUP);
       }
       const rand_answer = RAND_GROUP[Math.floor(Math.random() * RAND_GROUP.length)];
       setTimeout(() => {this.message = `${response} ${rand_answer}.`; }, 5000);
@@ -66,10 +62,8 @@ export class AppPhoneComponent implements OnInit {
   ngOnInit() {
     this.halfAnswers = this.currentValuesService.halfAnswers;
     this.correct = this.questionsService.correct;
-    const phone_hover = document.getElementById('phone');
-    phone_hover.style.pointerEvents = 'none';
-    const phone = document.getElementById('phone_2');
-    phone.classList.add('disabled');
+    document.getElementById('phone').style.pointerEvents = 'none';
+    document.getElementById('phone_2').classList.add('disabled');
     this.handlePhone();
   }
 }

@@ -32,13 +32,11 @@ export class AppPeopleComponent implements OnInit {
     } else {
       this.isPeopleUsed = true;
     }
-    // this.current_text = this.strings[17];
     const correct_answer = this.currentValuesService.mapAnswers(this.correct);
     const KNOWS = ['not_know', 'know', 'know', 'know'];
     const know = KNOWS[Math.floor(Math.random() * KNOWS.length)];
     const ANSWRS = ['A', 'B', 'C', 'D'];
     const OUTCOME = {};
-    console.log(know);
     if (!this.isHalfUsed) {
       if (know === 'know') {
         const corr_percent: number = Math.floor(Math.random() * 49 + 51);
@@ -55,7 +53,6 @@ export class AppPeopleComponent implements OnInit {
             possibles.splice(possibles.indexOf(random_answr_perc), 1);
           }
         }
-        console.log(corr_percent, b, c, d);
       } else {
         const a: number = Math.floor(Math.random() * 51);
         const b: number = Math.floor(Math.random() * (100 - a));
@@ -80,11 +77,12 @@ export class AppPeopleComponent implements OnInit {
       }
       const rest = 100 - corr_percent;
       for (let i = 0; i < 4; i++) {
-        if (ANSWRS[i] === correct_answer) {
-          OUTCOME[ANSWRS[i]] = corr_percent;
-          (<HTMLElement>document.getElementsByClassName(ANSWRS[i])[0]).style.display = 'inline-block';
-        } else if (ANSWRS[i] === second_answer) {
-          OUTCOME[second_answer] = rest;
+        if (ANSWRS[i] === correct_answer || ANSWRS[i] === second_answer) {
+          if (ANSWRS[i] === correct_answer) {
+            OUTCOME[ANSWRS[i]] = corr_percent;
+          } else if (ANSWRS[i] === second_answer) {
+            OUTCOME[second_answer] = rest;
+          }
           (<HTMLElement>document.getElementsByClassName(ANSWRS[i])[0]).style.display = 'inline-block';
         }
       }
@@ -101,16 +99,12 @@ export class AppPeopleComponent implements OnInit {
   ngOnInit() {
     this.halfAnswers = this.currentValuesService.halfAnswers;
     this.correct = this.questionsService.correct;
-    const people_hover = document.getElementById('people');
-    people_hover.style.pointerEvents = 'none';
-    const people = document.getElementById('people_2');
-    people.classList.add('disabled');
-    console.log(this.correct);
+    document.getElementById('people').style.pointerEvents = 'none';
+    document.getElementById('people_2').classList.add('disabled');
     this.people_outcomes = document.getElementsByClassName('people-outcome');
     for (let k = 0; k < 4; k++) {
       (<HTMLElement>this.people_outcomes[k]).style.display = 'none';
     }
-    setTimeout(() => {
-      this.handlePeople(); }, 2000);
+    setTimeout(() => { this.handlePeople(); }, 2000);
   }
 }

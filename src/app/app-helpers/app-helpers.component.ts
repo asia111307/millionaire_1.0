@@ -29,10 +29,8 @@ export class AppHelpersComponent implements OnInit {
     } else {
       this.currentValuesService.updateIsHalfUsed(true);
     }
-    const half_hover = document.getElementById('half');
-    half_hover.style.pointerEvents = 'none';
-    const half = document.getElementById('half_2');
-    half.classList.add('disabled');
+    document.getElementById('half').style.pointerEvents = 'none';
+    document.getElementById('half_2').classList.add('disabled');
     const answs = ['answer_a', 'answer_b', 'answer_c', 'answer_d'];
     let second_answ: string = this.answers[answs.indexOf(this.correct)];
     while (this.answers.indexOf(second_answ) === answs.indexOf(this.correct)) {
@@ -48,7 +46,6 @@ export class AppHelpersComponent implements OnInit {
       }
     }
     const halfAnswers = [this.correct, answs[this.answers.indexOf(second_answ)]];
-    console.log(halfAnswers);
     this.currentValuesService.updateHalfAnswers(halfAnswers);
   }
   ngOnInit() {
