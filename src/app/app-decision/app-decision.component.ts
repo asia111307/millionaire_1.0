@@ -14,6 +14,7 @@ export class AppDecisionComponent implements OnInit {
   isCorrect: boolean;
   wonPrize: number;
   wonPrizeValue = '';
+  usedQuestions: number;
   constructor(
     private router: Router,
     private currentValuesService: CurrentValuesService,
@@ -23,10 +24,14 @@ export class AppDecisionComponent implements OnInit {
     this.currentValuesService.currentPrize$.subscribe((value: number) => {
       this.wonPrize = value;
       if (this.currentValuesService.valuesReached.includes(value)) {
-        this.wonPrizeValue += 'gwarantowaną sumę ';
+        if (value === 1000000) {
+          this.wonPrizeValue += 'główną nagrodę: ';
+        } else {
+          this.wonPrizeValue += 'gwarantowaną sumę ';
+        }
       }
       if (value === 1000000) {
-        this.wonPrizeValue += '1 000 000';
+        this.wonPrizeValue += 'milion';
       } else if (value === 500) {
         this.wonPrizeValue += '500';
       } else if (value === 0) {
@@ -58,5 +63,6 @@ export class AppDecisionComponent implements OnInit {
   }
   ngOnInit() {
     this.isCorrect = this.currentValuesService.readIsAnswerCorrect();
+    this.usedQuestions = this.questionsService.used_questions.length;
   }
 }
