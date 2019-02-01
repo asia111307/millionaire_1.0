@@ -1,6 +1,6 @@
 export const STRINGS = {
-  0: 'Witaj! Wpisz swoje imię i zaczynamy!',
-  1: 'Dobrze, {{ name }}. Jaka jest Twoja decyzja?',
+  0: 'Witamy w specjalnym wydaniu Milionerów dla kognitywistów! Wpisz swoje imię i zaczynamy!',
+  1: 'Dobrze. Jaka jest Twoja decyzja?',
   2: 'Wybrałeś Pół na pół. Prosimy komputer o odrzucenie losowo dwóch błędnych odpowiedzi:',
   3: 'Wybrałeś Telefon do przyjaciela. Zatem dzwonimy!',
   4: 'Witaj, {{ random_name }}! {{ name.capitalize()) }} gra właśnie o  {{ MONEY[i]) }} zł i potrzebuje Twojej pomocy.',
@@ -22,5 +22,11 @@ export const STRINGS = {
   20: 'Hmmm...',
   21: 'O kurczę...',
   22: 'Ej, coś mi to mówi...',
+  23: 'Aby zostać Milionerem, musisz odpowiedzieć na 12 pytań. Każde jest warte określoną kwotę pieniędzy.',
+  24: 'Pytania o numerach 3 i 7 to pytania, na które odpowiedź daje Ci sumę gwarantowaną.',
+  25: 'Do każdego pytania otrzymasz 4 warianty odpowiedzi, ale tylko jedna z nich jest poprawna.',
+  26: 'W dowolnym momencie programu możesz się wycofać i zatrzymać dotychczas zdobyte pieniądze.',
+  27: 'Do dyspozycji masz 3 koła ratunkowe: Pytanie do publiczności, Pół na pół oraz Telefon do przyjaciela.',
+  28: 'Chyba już wszystko wiadomo. Czas rozpocząć walkę o milion złotych!',
 
 };

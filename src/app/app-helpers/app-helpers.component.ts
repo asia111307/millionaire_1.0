@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {STRINGS} from '../strings';
-import {PresenterTextService} from '../presenter-text.service';
 import {QuestionsService} from '../questions.service';
 import {CurrentValuesService} from '../current-values.service';
 
@@ -16,7 +15,6 @@ export class AppHelpersComponent implements OnInit {
   strings = STRINGS;
   constructor(
     private questionsService: QuestionsService,
-    private presenterTextService: PresenterTextService,
     private currentValuesService: CurrentValuesService,
   ) {
     this.questionsService.answers$.subscribe((answers: any) => { this.answers = answers; } );

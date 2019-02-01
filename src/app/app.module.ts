@@ -21,10 +21,10 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AppDecisionComponent} from './app-decision/app-decision.component';
 import {CurrentValuesService} from './current-values.service';
 import {GetNameService} from './get-name.service';
-import {PresenterTextService} from './presenter-text.service';
 import {AppWelcomeComponent} from './app-welcome/app-welcome.component';
-import { AppResignationComponent } from './app-resignation/app-resignation.component';
-import { AppSummaryComponent } from './app-summary/app-summary.component';
+import {AppResignationComponent} from './app-resignation/app-resignation.component';
+import {AppSummaryComponent} from './app-summary/app-summary.component';
+import {AppInstructionsComponent} from './app-instructions/app-instructions.component';
 
 const components = [
   AppComponent,
@@ -42,17 +42,20 @@ const components = [
   AppPhoneComponent,
   AppMainWindowComponent,
   AppDecisionComponent,
-  AppWelcomeComponent
+  AppWelcomeComponent,
+  AppResignationComponent,
+  AppSummaryComponent,
+  AppInstructionsComponent
 ];
 
 @NgModule({
-  declarations: [components, CapitalizePipe, AppResignationComponent, AppSummaryComponent],
+  declarations: [components, CapitalizePipe],
   imports: [
     BrowserModule,
     CommonModule,
     AppRoutingModule
   ],
-  providers: [QuestionsService, CurrentValuesService, GetNameService, PresenterTextService],
+  providers: [QuestionsService, CurrentValuesService, GetNameService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
