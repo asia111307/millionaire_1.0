@@ -24,6 +24,8 @@ You can also download the zip file with ready-to-play executable file for Window
 
 ### Run with Docker
     $ docker-compose up
+    
+    
 
 
 
