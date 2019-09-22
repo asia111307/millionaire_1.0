@@ -2,7 +2,7 @@
 
 Millionaire - Cognitive Edition is a cagnitive science version of known Millionaire game. In the beginning, the game was written in Python and available to play through CMD. Then it was rewritten to Angular app.   
 
-Play here: http://jpaliwoda.pythonanywhere.com/
+Play here: https://asia111307.github.io/millionaire_1.0/
 
 
 ## Getting Started
