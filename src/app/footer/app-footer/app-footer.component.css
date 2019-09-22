@@ -1,0 +1,46 @@
+.footer-down {
+  width: 100%;
+  background-color: #000000;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 50px;
+  height: 5%;
+}
+.footer-down p {
+  margin: 0;
+}
+
+.github-button {
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.github-btn {
+  height: 25px;
+  width: 25px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #FFFFFF;
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.github-btn:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+
+@media (max-width: 1170px) {
+  .footer-down {
+    justify-content: center;
+    padding: 8px;
+    height: auto;
+  }
+}

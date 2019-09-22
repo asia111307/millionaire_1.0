@@ -1,27 +1,29 @@
-# Mill
+# Millionaire - Cognitive Edition
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
+Millionaire - Cognitive Edition is a cagnitive science version of known Millionaire game. In the beginning, the game was written in Python and available to play through CMD. Then it was rewritten to Angular app.   
 
-## Development server
+Play here: http://jpaliwoda.pythonanywhere.com/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Getting Started
+### Clone the repository
+    $ git clone https://github.com/asia111307/millionaire_1.0.git && cd millionaire_1.0
+## Old version 
+### Build with
+- [Python3](https://www.python.org/)
+### Run
+    $ cd millionaire_old && python millionaire.py
+   
+You can also download the zip file with ready-to-play executable file for Windows
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## New version build with
+- HTML, CSS, JavaScript
+- [Bootstrap4](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+- [Angular 6](https://angular.io/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Run with Docker
+    $ docker-compose up
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

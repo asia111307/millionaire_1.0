@@ -1,0 +1,84 @@
+.stage {
+  margin-left: 0;
+  display: block;
+  text-align: right;
+  margin-right: 0;
+}
+.stage div {
+  display: block;
+}
+.stage div div {
+  border-radius: 15%;
+  border: 3px solid white;
+  background-color: rgba(40, 70, 151, 0.8);
+  height: 41px;
+  line-height: 35px;
+  float: right;
+}
+.stage p, .stage-status p {
+  margin-right: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.stage-1 {
+  width: 150px;
+}
+.stage-2 {
+  width: 160px;
+}
+.stage-3 {
+  width: 170px;
+}
+.stage-4 {
+  width: 180px;
+}
+.stage-5 {
+  width: 190px;
+}
+.stage-6 {
+  width: 200px;
+}
+.stage-7 {
+  width: 210px;
+}
+.stage-8 {
+  width: 220px;
+}
+.stage-9 {
+  width: 230px;
+}
+.stage-10 {
+  width: 240px;
+}
+.stage-11 {
+  width: 250px;
+}
+.stage-12 {
+  width: 264px;
+}
+.stage-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.stage-button {
+  display: none;
+  width: 150px;
+  margin-top: 0;
+}
+.stage-status p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1170px) {
+  .stage div, .stage div div {
+    display: flow-root;
+  }
+  .stage-button {
+    display: block;
+  }
+  .stage {
+    display: none;
+  }
+}

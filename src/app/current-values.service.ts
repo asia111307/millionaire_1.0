@@ -110,13 +110,11 @@ export class CurrentValuesService {
     (<HTMLElement>document.querySelector('app-top-nav')).style.display = 'none';
     (<HTMLElement>document.querySelector('app-answ-quest')).style.display = 'none';
     (<HTMLElement>document.querySelector('app-stage')).style.display = 'none';
-    (<HTMLElement>document.querySelector('.presenter')).style.display = 'none';
   }
   showGameElementsAfterStart() {
     (<HTMLElement>document.querySelector('app-top-nav')).style.display = 'block';
     (<HTMLElement>document.querySelector('app-answ-quest')).style.display = 'block';
     (<HTMLElement>document.querySelector('app-stage')).style.display = 'block';
-    (<HTMLElement>document.querySelector('.presenter')).style.display = 'flex';
   }
   updateStage() {
     this.currentStage += 1;

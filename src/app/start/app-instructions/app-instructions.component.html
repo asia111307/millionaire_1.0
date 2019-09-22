@@ -1,0 +1,18 @@
+<div class="instructions">
+  <div class="popup">
+    <div class="popup-background">
+      <div class="popup-box">
+        <div class="box">
+          <p class="quest"> {{ currentSlideText }} </p><br>
+        </div>
+        <div class="buttons">
+          <button class="btn-prev" *ngIf="currentSlide > 0" type="button" (click)="prev()"><span class="text-white"> Wstecz </span></button>
+          <button class="btn-next" *ngIf="currentSlide < 5" type="button" (click)="next()"><span class="text-white"> Dalej </span></button>
+          <button class="btn-start" *ngIf="currentSlide == 5" type="button" (click)="startGame()"><span class="text-white"> Rozpocznij grę </span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

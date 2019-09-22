@@ -1,0 +1,11 @@
+.mainmenu {
+  min-height: 250px;
+  min-width: 280px;
+}
+
+@media (max-width: 1170px) {
+  .mainmenu {
+    margin: 0;
+    display: none;
+  }
+}

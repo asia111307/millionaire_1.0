@@ -1,0 +1,14 @@
+<div class="popup popup-mobile">
+  <div class="popup-background popup-mobile">
+    <div class="popup-box popup-mobile">
+      <div class="box">
+        <p class="quest"> Czy na pewno chcesz przerwać grę? <br>
+        Twoja obecna wygrana to <br>{{ wonPrizeValue }} zł. </p>
+      </div>
+      <div class="buttons">
+        <button type="submit" (click)="endGame()"><span class="text-white"> Tak, kończę grę </span></button>
+        <button type="submit" (click)="resumeGame()"><span class="text-white"> Nie, jednak gram dalej </span></button>
+      </div>
+    </div>
+  </div>
+</div>

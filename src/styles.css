@@ -6,6 +6,7 @@
 }
 body {
   background: rgba(0,0,0, 0.9);
+  height: 100vh;
 }
 .text-white {
   color: white;
@@ -21,28 +22,21 @@ body {
   background-image: url(/assets/pics/background.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   width: 100%;
+  height: 95%;
 }
 .container {
   width: 90%;
   text-align: center;
   padding: 2% 0;
   min-height: 800px;
+
 }
 .main_w {
   display: flex;
   justify-content: space-between;
   width: 100%;
-}
-.presenter {
-  display: flex;
-  align-items: flex-end;
-}
-.presenter-img {
-  background-image: url("/assets/pics/presenter.png");
-  width: 302px;
-  height: 439px;
-  background-size: contain;
 }
 button {
   width: 200px;
@@ -61,27 +55,40 @@ button p {
   font-size: 18px;
 }
 
-.decision {
+.popup {
   border-radius: 10%;
   border: 10px solid rgba(40, 70, 151, 0.8);
-  height: 250px;
-  margin: 50px 0 0 0;
-  width: 380px;
+  height: 300px;
+  width: 500px;
 }
-.decision-box {
-  text-align: center;
+.popup-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height:100%;
   padding: 20px 25px;
+  width: 100%;
 }
-.decision-background {
+.popup-background {
   background-color: white;
   height: 100%;
-  border-radius: 7%;
+  border-radius: 9%;
 }
 .box {
-  display: inline;
+  display: flex;
+  width: 100%;
+  min-height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 .quest {
-  width: 50%;
   display: inline;
   margin: 0 20px;
   font-size: 20px;
@@ -93,19 +100,46 @@ button p {
 .buttons {
   margin-top: 10px;
 }
-
-@media (max-width: 1170px) {
-  .decision {
-    margin: 0 auto;
-  }
+.app-main-window {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-@media (max-width:1170px) {
-  .main_w {
-    display: block;
+@media (max-width: 1170px) {
+  .popup {
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+    min-height: 400px;
   }
-  .presenter-img {
-    display: none;
+  .popup-background, .popup-box {
+    min-height: 400px;
+  }
+  .buttons {
+    flex-direction: column;
+  }
+  .popup-box {
+    padding: 10px;
+  }
+  .popup-mobile {
+    min-height: 300px;
+  }
+  .popup-helper {
+    min-height: 250px;
+    height: 250px;
+    max-height: 250px;
+  }
+  .main_w {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 20px;
+  }
+  .content {
+    height: auto;
+  }
+  .app-main-window {
+    margin-top: 15px;
   }
 }

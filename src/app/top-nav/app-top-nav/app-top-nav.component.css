@@ -1,0 +1,14 @@
+.top-nav {
+  padding: 0;
+  display: flex;
+  margin-top: 0;
+  text-align: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+@media (max-width: 1170px) {
+  .top-nav {
+    display: block;
+  }
+}

@@ -1,0 +1,94 @@
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+}
+
+.startmenu, .buttons {
+  display: block;
+}
+.startgame {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.start-menu {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.start-menu input {
+  font-size: 20px;
+  color: #333;
+  height: 50px;
+  font-weight: bold;
+  padding: 0 10px;
+  width: 200px;
+  background: none;
+  border: none;
+  border-bottom: 5px solid rgba(40, 70, 151, 0.8);
+}
+
+.start-menu input::placeholder {
+  font-size: 0.8em;
+}
+
+.start-menu textarea:focus, .start-menu input:focus {
+  outline: none;
+}
+
+.start-menu button {
+  width: 200px;
+  background-color: rgba(40, 70, 151, 0.8);
+  border-radius: 50px;
+  line-height: 50px;
+  margin-top: 10px;
+  border: none;
+  height: 50px;
+}
+
+.start-menu button:hover {
+  background-color: rgba(159, 179, 222, 0.8)
+}
+
+.start-menu button p {
+  font-size: 18px;
+}
+
+.textbox {
+  border-radius: 15px;
+  background-color: white;
+  color: #434343;
+  margin-top: 50px;
+  min-height: 40px;
+  padding: 5px 10px;
+  line-height: 40px;
+  width: 100%;
+}
+.textbox p {
+  margin-bottom: 0;
+}
+.text-box {
+  display: flex;
+  justify-content: center;
+  width: 30vw;
+}
+
+@media (max-width: 1170px) {
+  .startmenu, .start-menu, .startgame, .buttons {
+    display: block;
+  }
+  .text-box {
+    width: 90%;
+  }
+  .welcome {
+    width: auto;
+  }
+  .start-menu button {
+    margin-top: 15px;
+  }
+}

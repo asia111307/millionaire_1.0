@@ -1,0 +1,22 @@
+<div class="popup popup-mobile">
+  <div class="popup-background popup-mobile">
+    <div *ngIf="isCorrect" class="popup-box popup-mobile">
+      <div class="box">
+        <p class="quest">Super! <br> To jest dobra odpowiedź! <br>
+        Wygrałeś {{ wonPrizeValue }} zł!</p>
+      </div>
+      <div class="buttons">
+        <button *ngIf="usedQuestions != 12" type="submit" (click)="nextQuestion()"><span class="text-white"> Następne pytanie </span></button>
+        <button *ngIf="usedQuestions == 12" type="submit" (click)="restartGame()"><span class="text-white"> Zakończ grę </span></button>
+      </div>
+    </div>
+    <div *ngIf="!isCorrect" class="popup-box popup-mobile">
+      <div class="box">
+        <p class="quest"> Niestety, to nie jest dobra odpowiedź. </p>
+      </div>
+      <div class="buttons">
+        <button type="submit" (click)="restartGame()"><span class="text-white"> Zakończ grę </span></button>
+      </div>
+    </div>
+  </div>
+</div>

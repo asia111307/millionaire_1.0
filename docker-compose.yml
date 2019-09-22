@@ -1,0 +1,10 @@
+version: '3.5'
+services:
+    millionaire_local:
+      image: millionaire_local1
+      build: .
+      ports: 
+        - '4200:4200'
+      command: ng serve --host 0.0.0.0 
+      volumes:
+        - ./:/app
