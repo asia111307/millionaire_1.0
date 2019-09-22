@@ -14,7 +14,7 @@ Play here: http://jpaliwoda.pythonanywhere.com/
 ### Run
     $ cd millionaire_old && python millionaire.py
    
-You can also download the zip file with ready-to-play executable file for Windows
+You can also download the zip file with ready-to-play executable file for Windows.
 
 
 ## New version build with
