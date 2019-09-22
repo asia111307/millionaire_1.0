@@ -7,7 +7,7 @@ Play here: https://asia111307.github.io/millionaire_1.0/
 
 ## Getting Started
 ### Clone the repository
-    $ git clone https://github.com/asia111307/millionaire_1.0.git && cd millionaire_1.0
+    $ git clone https://github.com/asia111307/millionaire_1.0.git && cd millionaire_1.0 && git checkout master
 ## Old version 
 ### Build with
 - [Python3](https://www.python.org/)

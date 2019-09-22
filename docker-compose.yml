@@ -1,7 +1,7 @@
 version: '3.5'
 services:
-    millionaire_local:
-      image: millionaire_local1
+    millionaire_game:
+      image: millionaire_game_image
       build: .
       ports: 
         - '4200:4200'
