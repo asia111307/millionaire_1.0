@@ -8,6 +8,7 @@ Play here: https://asia111307.github.io/millionaire_1.0/
 ## Getting Started
 ### Clone the repository
     $ git clone https://github.com/asia111307/millionaire_1.0.git && cd millionaire_1.0 && git checkout master
+
 ## Old version 
 ### Build with
 - [Python3](https://www.python.org/)
@@ -16,12 +17,11 @@ Play here: https://asia111307.github.io/millionaire_1.0/
    
 You can also download the zip file with ready-to-play executable file for Windows.
 
-
-## New version build with
+## New version 
+### Build with
 - HTML, CSS, JavaScript
 - [Bootstrap4](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
 - [Angular 6](https://angular.io/)
-
 ### Run with Docker
     $ docker-compose up
     

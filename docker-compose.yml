@@ -1,10 +1,12 @@
 version: '3.5'
 services:
-    millionaire_game1:
-      image: millionaire_game_image23556533442
+    millionaire_game_local:
+      image: millionaire_game_image_local
       build: .
       ports: 
         - '4200:4200'
       command: ng serve --host 0.0.0.0
       volumes:
-        - ./:/app
+        - ./:/app   
+        - app/node_modules
+
