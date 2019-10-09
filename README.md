@@ -1,6 +1,6 @@
-# Millionaire - Cognitive Edition
+# Millionaire 1.0
 
-Millionaire - Cognitive Edition is a cagnitive science version of known Millionaire game. In the beginning, the game was written in Python and available to play through CMD. Then it was rewritten to Angular app.   
+Millionaire - 1.0 is a cagnitive science/computer science version of known Millionaire game. In the beginning, the game was written in Python and available to play through CMD. Then it was rewritten to Angular app.   
 
 Play here: https://asia111307.github.io/millionaire_1.0/
 

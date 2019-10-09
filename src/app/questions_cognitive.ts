@@ -1,4 +1,4 @@
-export const QUESTIONS = [
+export const QUESTIONS_COGNITIVE = [
     ['Rola "policji mózgowej" w ośrodkowych układzie nerwowym należy do:', ['oligodendrocytów', 'astrocytów', 'mikrogleju', 'komórek ependymy'], 'c'],
     ['Zmienna zdychotomizowana to zmienna:', ['jednowartościowa', 'dwuwartościowa', 'trójwartościowa', 'wielowartościowa'], 'b'],
     ['Niezrozumiała i niewyraźna mowa oraz osłabienie mięśni w gardle i języku są charakterystyczne dla:', ['dysartrii', 'dystonii', 'ataksji', 'agnozji słuchowej'], 'a'],
@@ -50,7 +50,7 @@ export const QUESTIONS = [
     ['Rozpoznawalne, jakościowe cechy tego, co dane, które mogą powtarzać się w różnych przeżyciach doznaniowych i dlatego są pewnym typem uniwersaliów to:', ['neuronalne korelaty świadomości', 'potencjały gotowości', 'umysły franklinowskie', 'qualia'], 'd'],
     ['Julian Jaynes jest autorem koncepcji:', ['wieży generowania i testowania', 'qualiów', 'dwuizbowego umysłu', 'neuronalnych korelatów świadomości'], 'c'],
     ['Do nieprawidłowości neuroanatomicznych zaobserwowanych u osób z autyzmem nie zaliczmy:', ['zwiększonej objętość płata ciemieniowego', 'zmniejszenia tylnej części ciała modzelowatego', 'zwiększonej gęstości upakowania komórek w systemie limbicznym', 'ubytku neuronów w móżdżku'], 'a'],
-    ['Jeżeli w trakcie zadania na rozpoznawania emocji u badanego widać aktywność w korze oczodołowej, to znaczy, że rozpoznawaną emocją jest:', ['strach', 'wstręt', 'gniew', 'smutek'], 'c'],
+    ['Jeżeli w trakcie zadania na rozpoznawanie emocji u badanego widać aktywność w korze oczodołowej, to znaczy, że rozpoznawaną emocją jest:', ['strach', 'wstręt', 'gniew', 'smutek'], 'c'],
     ['Do czterech głównych maksym konwersacyjnych, które wyróżnił Grice, nie zalicza się maksyma:', ['jakości', 'kooperacji', 'ilości', 'odpowiedniości'], 'b'],
     ['Osoby z autyzmem charakteryzuje słaba centralna koherencja, a to znaczy, że:', ['ich przetwarzanie nie jest skoncentrowane na szczególe', 'mają tendencję do przetwarzania raczej globalnej niż lokalnej informacji', 'są niezdolne do przetwarzania napływających bodźców w kontekście', 'bardziej dostrzegają i pamiętają konfigurację bodźców niż ich cechy'], 'c'],
     ['Co nie jest medycznym objawem zespołu Williamsa?', ['opóźniony rozwój motoryczny', 'opóźnione starzenie się', 'charakterystyczne rysy twarzy przypominające baśniowych elfów', 'przejściowa dziecięca hiperkalcemia'], 'b'],

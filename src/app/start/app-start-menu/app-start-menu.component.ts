@@ -3,6 +3,7 @@ import {STRINGS} from '../../strings';
 import {CurrentValuesService} from '../../current-values.service';
 import {Router} from '@angular/router';
 import {AppAnswQuestComponent} from '../../main-window/answers-question/app-answ-quest/app-answ-quest.component';
+import {QuestionsService} from "../../questions.service";
 
 @Component({
   providers: [AppAnswQuestComponent],
@@ -16,7 +17,8 @@ export class AppStartMenuComponent implements OnInit {
   constructor(
     private currentValuesService: CurrentValuesService,
     private router: Router,
-    private answQuestComponent: AppAnswQuestComponent
+    private answQuestComponent: AppAnswQuestComponent,
+    private questionsService: QuestionsService
   ) {}
   startGame(name) {
     if (name) {
@@ -24,7 +26,11 @@ export class AppStartMenuComponent implements OnInit {
       this.currentValuesService.saveName(name);
       this.router.navigate(['/main']);
       (<HTMLElement>document.getElementsByClassName('mainmenu')[0]).style.display = 'none';
-      setTimeout(() => { this.answQuestComponent.nextQuestion(); }, 1000);
+      const gametype = (<HTMLInputElement>document.querySelector('input[name="gametype"]:checked')).value;
+      this.questionsService.setGameType(gametype);
+      setTimeout(() => {
+        this.answQuestComponent.nextQuestion();
+        }, 1000);
     }
   }
   seeInstructions() {

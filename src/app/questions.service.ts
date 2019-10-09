@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {QUESTIONS} from './questions';
+import {QUESTIONS_COGNITIVE} from './questions_cognitive';
+import {QUESTIONS_IT} from './questions_it';
 import {Observable, Subject} from 'rxjs';
 
 @Injectable({
@@ -13,6 +14,8 @@ export class QuestionsService {
   answers$: Observable<any>;
   correct$: Observable<string>;
   correct: string;
+  gametype: string;
+  questionsPack: any;
   private used_questionsSubject: Subject<any>;
   private questBoxSubject: Subject<any>;
   private questionSubject: Subject<string>;
@@ -30,9 +33,20 @@ export class QuestionsService {
     this.answers$ = this.answersSubject.asObservable();
     this.correct$ = this.correctSubject.asObservable();
   }
-  open_quest_pack() {
+  setGameType(type) {
+    if (type === 'cognitive') {
+      this.questionsPack = QUESTIONS_COGNITIVE;
+    } else if (type === 'it') {
+      this.questionsPack = QUESTIONS_IT;
+    }
+    return this.questionsPack;
+  }
+  getGameType() {
+    return this.questionsPack;
+  }
+  open_quest_pack(gamePack) {
     try {
-      return QUESTIONS;
+      return gamePack;
     } catch (error) {
       console.error(error);
     }
@@ -45,7 +59,7 @@ export class QuestionsService {
     }
     this.used_questionsSubject.next(quest_box);
     this.used_questions.push(quest_box);
-    QUESTIONS.splice(QUESTIONS.indexOf(quest_pack), 1);
+    quest_pack.splice(quest_pack.indexOf(quest_pack), 1);
     this.questBoxSubject.next(quest_box);
     return quest_box;
   }
@@ -77,7 +91,8 @@ export class QuestionsService {
     return this.correct;
   }
   choose_box() {
-    const question_pack = this.open_quest_pack();
+    const gametype = this.getGameType();
+    const question_pack = this.open_quest_pack(gametype);
     const quest_box = this.choose_question_box(question_pack);
     const question = this.set_question(quest_box);
     const answers = this.set_answers(quest_box);

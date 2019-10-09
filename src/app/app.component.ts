@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'Milionerzy dla kognitywistów';
+  title = 'Milionerzy 1.0';
   constructor(
     private router: Router
   ) {}

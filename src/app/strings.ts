@@ -1,5 +1,5 @@
 export const STRINGS = {
-  0: 'Witamy w specjalnym wydaniu Milionerów dla kognitywistów! Wpisz swoje imię i zaczynamy!',
+  0: 'Witamy w specjalnym wydaniu Milionerów! Wybierz wersję gry, wpisz swoje imię i zaczynamy!',
   1: 'Dobrze. Jaka jest Twoja decyzja?',
   2: 'Wybrałeś Pół na pół. Prosimy komputer o odrzucenie losowo dwóch błędnych odpowiedzi:',
   3: 'Wybrałeś Telefon do przyjaciela. Zatem dzwonimy!',

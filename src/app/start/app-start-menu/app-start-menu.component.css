@@ -4,7 +4,6 @@
   justify-content: center;
   width: 80vw;
 }
-
 .startmenu, .buttons {
   display: block;
 }
@@ -77,6 +76,31 @@
   justify-content: center;
   width: 30vw;
 }
+.gametype {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+.gametype-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.gametype-input {
+  width: 30px!important;
+}
+.gametype-p, .gametype-input {
+  margin: 0;
+}
+.gametype-p {
+  font-size: 16px;
+}
+.under-construction {
+  font-size: 12px;
+}
+
 
 @media (max-width: 1170px) {
   .startmenu, .start-menu, .startgame, .buttons {
@@ -90,5 +114,11 @@
   }
   .start-menu button {
     margin-top: 15px;
+  }
+  .gametype {
+    flex-direction: column;
+  }
+  .gametype-item {
+    width: 100%;
   }
 }

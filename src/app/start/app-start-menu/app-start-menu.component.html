@@ -5,6 +5,15 @@
         <div class="box">
           <p class="quest"> {{ strings[0] }}</p>
         </div>
+        <div class="gametype">
+          <div class="gametype-item">
+            <input class="gametype-input" type="radio" #gametype name="gametype" checked value="cognitive"> <p class="gametype-p"> dla kognitywistów </p>
+          </div>
+          <div class="gametype-item">
+            <input class="gametype-input" type="radio" #gametype name="gametype" disabled value="it"> <p class="gametype-p"> dla informatyków
+            <span class="under-construction">  (w przygotowaniu) </span></p>
+          </div>
+        </div>
         <div class="start-menu">
           <form class="buttons">
             <div class="startgame">
