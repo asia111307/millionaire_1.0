@@ -3,6 +3,7 @@
 Millionaire - 1.0 is a cagnitive science/computer science version of known Millionaire game. In the beginning, the game was written in Python and available to play through CMD. Then it was rewritten to Angular app.   
 
 Play here: https://asia111307.github.io/millionaire_1.0/
+Play old version: https://repl.it/@asia111307/millionaire
 
 
 ## Getting Started
