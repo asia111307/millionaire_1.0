@@ -27,6 +27,7 @@ export class AppAnswersComponent implements OnInit {
     if (answer === this.correct) {
       this.currentValuesService.updateIsAnswerCorrect(true);
       this.currentValuesService.updateCurrentPrize();
+      this.currentValuesService.updateGuaranteedValueReached();
       setTimeout(() => {
         answ.classList.add('correct-answer');
         this.router.navigate(['decision']);

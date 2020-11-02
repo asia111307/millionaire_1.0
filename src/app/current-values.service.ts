@@ -81,6 +81,13 @@ export class CurrentValuesService {
     this.updateCurrentStage();
     this.currentStageValue = this.values[this.currentStage];
     this.currentStageValueSubject.next(this.currentStageValue);
+    // if (this.valuesReached.includes(this.currentStageValue)) {
+    //   this.currentStageValueReached = this.currentStageValue;
+    //   this.currentStageValueReachedSubject.next(this.currentStageValueReached);
+    // }
+  }
+
+  updateGuaranteedValueReached() {
     if (this.valuesReached.includes(this.currentStageValue)) {
       this.currentStageValueReached = this.currentStageValue;
       this.currentStageValueReachedSubject.next(this.currentStageValueReached);

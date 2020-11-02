@@ -20,7 +20,7 @@ export class AppAnswQuestComponent implements OnInit {
       this.questionsService.choose_box();
       this.currentValuesService.enableAnswersAndHelpers();
       (<HTMLButtonElement>document.getElementsByClassName('endGameButton')[0]).style.pointerEvents = 'auto';
-    }, 2000);
+    }, 1000);
   }
   ngOnInit() {
     this.currentValuesService.disableAnswersAndHelpers();

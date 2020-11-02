@@ -7,6 +7,9 @@
   justify-content: center;
   padding-left: 50px;
   height: 5%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 .footer-down p {
   margin: 0;

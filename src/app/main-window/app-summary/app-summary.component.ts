@@ -32,10 +32,8 @@ export class AppSummaryComponent implements OnInit {
     this.gameEndBy = this.currentValuesService.endGameBy;
     if (this.gameEndBy === 'user') {
       this.winning = this.wonPrizeValue;
-      console.log('user');
     } else {
       this.winning = this.currentGuaranteedValue;
-      console.log('no user');
     }
     (<HTMLElement>document.getElementsByClassName('mainmenu')[0]).style.display = 'block';
   }
